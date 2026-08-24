@@ -1,0 +1,1270 @@
+
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/water_auto.css?v=22">
+<!-- <link rel="stylesheet" href="../css/water_base.css"> -->
+<!-- <link rel="stylesheet" href="../css/water_light.css"> -->
+<link rel="shortcut icon" type="image/x-icon" href="../gfx/icon.png">
+<meta charset="utf-8"/>
+<title>Revisiting Old Findings: A Journey Through Precision and Time | Arc Scientific</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title" content="Revisiting Old Findings: A Journey Through Precision and Time">
+<meta name="description" content="Revisiting Old Findings: A Journey Through Precision and Time page at arcsci.org">
+<meta property="og:description" content="Revisiting Old Findings: A Journey Through Precision and Time page at arcsci.org">
+<meta property="og:image" content="https://arcsci.org/gfx/arcsci_logo.webp">
+<meta property="og:url" content="https://arcsci.org/articles/revisiting_old_findings.html">
+<meta property="og:title" content="Revisiting Old Findings: A Journey Through Precision and Time">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="arcsci.org">
+<meta property="twitter:url" content="https://arcsci.org/articles/revisiting_old_findings.html">
+<meta name="twitter:title" content="Revisiting Old Findings: A Journey Through Precision and Time">
+<meta name="twitter:description" content="Revisiting Old Findings: A Journey Through Precision and Time page at arcsci.org">
+<meta name="twitter:image" content="https://arcsci.org/gfx/arcsci_logo.webp">
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  //tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}
+  tex2jax: {inlineMath: [['$','$']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+</head>
+<body>
+<div id="load_overlay" style="background-color:#14262d; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+<p><center><span class="menu"><a href="../index.html">Home</a> | <a href="../catalogue.html">Catalogue</a> | <a href="../articles.html">Articles</a> | <a href="../resources.html">Resources</a> | <a href="../software.html">Analysis Software</a> | <a href="../contact.html">Contact</a></span></center></p><hr><h1>Revisiting Old Findings: A Journey Through Precision and Time</h1>
+<p>Two and a half years ago, a single article changed how I would come to spend the majority of my time. Mark Qvist's controversial piece on artifact PV001 - <a href="https://unsigned.io/log/2023_03_17_Abstractions_Set_In_Granite.html">"Abstractions Set in Granite"</a> - landed in my life like a stone thrown into still water. The article sparked something profound within me: within weeks, I found myself immersed in 3D metrology software, studying metrology while writing analytical tools specifically designed for ancient artifacts. This vessel became my new special interest, transforming my free time into a rigorous scientific pursuit spanning 30 months of precision documentation and exploration of geometrical patterns.</p>
+<p><strong>This article is different from others on my site - it's deeply personal.</strong> Reading Mark's work awakened a curiosity that reshaped my understanding of craftsmanship across millennia. While software like PolyWorks offered initial insights (excellent for industrial objects with existing blueprints), it proved insufficient for studying these ancient artifacts in true detail. I realized measurements and ratio analysis - like those Mark performed - only hold statistical validity when the object itself possesses sufficient precision. This understanding launched my mission: to rigorously document the actual precision capabilities of these vessels before interpreting any geometric patterns.</p>
+<p>I will also detail my experience from around two years of assisting Adam Young, and later his "Artifact Foundation" - and the striking misconduct I documented there, while being involved with the project. </p>
+<p>It feels fitting that this will be my final article on arcsci.org, a full-circle moment revisiting the very discovery that started it all. But where Mark worked with a structured light scan (with limited interior visibility), we now have PV001's Zeiss CT scan: a very high-resolution dataset revealing the vessel's complete geometry. With sophisticated measuring techniques unavailable to me in 2023, we can finally test whether Mark's findings hold water - or run down the drain.</p>
+<p>The most compelling - and controversial - aspect of Mark's analysis was his documentation of π and $\varphi^2$ ratios embedded in the vessel's extremities. If genuine in an authentic ancient artifact, such mathematical precision would fundamentally reshape our understanding of human history. The three interlocking ratios (all following Diameter/Radius formulas) suggested to Mark the existence of a deliberate blueprint predating the vessel's creation - a possibility that demanded verification.</p>
+<p>I needed to know: <strong>Could these ratios survive rigorous metrological scrutiny?</strong> Or were they artifacts of measurement error, scan limitations, or statistical coincidence? Over the past 30 months, I've built analytical frameworks and reporting tools, specifically designed to answer such questions - frameworks that finally allow us to separate genuine ancient precision from modern interpretation bias.</p>
+<p>This journey has taught me that studying ancient craftsmanship requires more than measuring tools: it demands humility before the evidence, respect for methodological limitations, and the courage to let data guide conclusions rather than preconceptions. As we examine PV001 through this new lens, we're not just testing Mark's findings, we're participating in archaeology's most fundamental duty: ensuring that our interpretations of the past remain anchored in verifiable reality.</p>
+<p>Before we dive into the measurements, I want to be clear: If Mark's π and $\varphi^2$ ratios are genuinely embedded in an authentic artifact, it would represent one of archaeology's most profound discoveries. But extraordinary claims require very solid evidence - and that evidence must withstand the most rigorous metrological scrutiny available. Let's see what the data actually shows.</p>
+<h2><strong>Mesh Data Quality Analysis</strong></h2>
+<p>The superior resolution of our Zeiss CT scan compared to the original structured light data fundamentally changes what we can measure and verify. Consider these critical differences:</p>
+<p><strong>CT Scan Mesh Quality (Zeiss)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Mesh Property</th>
+<th>Metric</th>
+<th>Imperial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of vertices</td>
+<td>2,446,005</td>
+<td>2,446,005</td>
+</tr>
+<tr>
+<td>Max distance between vertices</td>
+<td>0.270 mm</td>
+<td>0.01062 inch</td>
+</tr>
+<tr>
+<td>Min distance between vertices</td>
+<td>0.001 mm</td>
+<td>0.00006 inch</td>
+</tr>
+<tr>
+<td>Median distance between vertices</td>
+<td>0.106 mm</td>
+<td>0.00416 inch</td>
+</tr>
+<tr>
+<td>Vertices per surface area (aprox.)</td>
+<td>3,300/cm²</td>
+<td>21,290/in²</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Structured Light Mesh Quality (2023)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Mesh Property</th>
+<th>Metric</th>
+<th>Imperial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of vertices</td>
+<td>473,864</td>
+<td>473,864</td>
+</tr>
+<tr>
+<td>Max distance between vertices</td>
+<td>0.621 mm</td>
+<td>0.02444 inch</td>
+</tr>
+<tr>
+<td>Min distance between vertices</td>
+<td>0.000 mm</td>
+<td>0.00001 inch</td>
+</tr>
+<tr>
+<td>Median distance between vertices</td>
+<td>0.203 mm</td>
+<td>0.00799 inch</td>
+</tr>
+<tr>
+<td>Vertices per surface area (aprox.)</td>
+<td>943/cm²</td>
+<td>6,083/in²</td>
+</tr>
+</tbody>
+</table>
+<p>The CT scan delivers over five times more vertices with significantly finer resolution (median vertex spacing of 0.106mm vs. 0.203mm), creating a mesh density that's more than three times greater per square centimeter. Most crucially for interior analysis, the CT scan captures the full surface, in contrast to the structured light scan. This will allow us to assess PV001's complete geometry without blind spots. This enhanced fidelity transforms what was previously speculative interpretation into measurable reality.</p>
+<div class="image_container">
+    <div class="image_wrapper_2col">
+        <img src="../images/revisiting_old_findings/old_scan.webp" alt="PV001">
+    </div>
+    <div class="image_wrapper_2col">
+        <img src="../images/revisiting_old_findings/new_scan.webp" alt="PV001">
+    </div>
+</div>
+<p><em>The structured light scan used in 2023 (left) versus today's Zeiss CT scan (right) - revealing previously invisible interior geometry.</em></p>
+<h2>Measurements of Features in the Horizontal Plane: Precision Before Interpretation</h2>
+<p>Before examining potential mathematical patterns in PV001, we must establish the metrological foundation for any interpretation. For ratio analysis to be scientifically valid, three conditions must be satisfied:</p>
+<ol>
+  <li><strong>Assessment of overall fabrication precision</strong><br>
+  The artifact must demonstrate sufficient manufacturing consistency to support meaningful measurement. Our <a href="comparative_metrological_analysis.html">comparative analysis of 51 stone vessels</a> across four categories (museum artifacts (MV), private collection items (PV), handmade vases (HV), and industrially produced vases (IV)) reveals that PV001 achieves an exterior Precision Score of 1980, corresponding to a surface variability RMSD of <b>22μm</b> across the full exterior surface (excluding only small top and bottom margins). This precision exceeds all other specimens in our dataset, including industrial CNC-produced examples.
+  </li>
+  <li><strong>Statistically validated feature measurements</strong><br>
+  Each geometric feature must be measured with documented precision, including quantification of measurement uncertainty.
+  </li>
+  <li><strong>Quality assessment of individual measurements</strong><br>
+  Each measurement must be evaluated for reliability before being incorporated into ratio calculations.
+  </li>
+</ol>
+
+<p>This represents fundamental metrological practice: Measurements from regions exhibiting high variability (large standard deviation, inconsistent circle fits, or poor surface continuity) cannot support reliable ratio analysis. Only where measurements demonstrate high consistency (low statistical dispersion across scan points) can observed ratios be considered potentially intentional rather than artifacts of measurement noise.</p>
+<p><strong>Precision assessment conclusion</strong>:<br />
+PV001 demonstrates exceptional fabrication precision that exceeds all other specimens in our comparative dataset. This high level of surface continuity and geometric consistency provides a solid metrological foundation for subsequent feature measurements.</p>
+<p>The following visualization compares surface deviation analyses across representative specimens from each artifact group, the heatmap range differs between plots to enable us to assess the surface texture. Note the difference in the precision of the lip comparing PV001 with MV005:</p>
+<div>
+        <img class="dark_only" src="../images/revisiting_old_findings/PV001_hm_PV001_dark_0.webp" alt="PV001">
+        <img class="light_only" src="../images/revisiting_old_findings/PV001_hm_PV001_0.webp" alt="PV001">
+        <i><b>PV001 exterior, private collection of Adam Young - Precision score: 1980 - RMSD: 22 μm | 8.6 thou - Range: 637 μm | 251 thou</b></i>
+</div>
+<div>
+        <img class="dark_only" src="../images/revisiting_old_findings/PV003_hm_PV003_dark_0.webp" alt="PV003">
+        <img class="light_only" src="../images/revisiting_old_findings/PV003_hm_PV003_0.webp" alt="PV003">
+        <i><b>PV003 exterior, private collection of Adam Young - Precision score: 1092 - RMSD: 30 μm | 11.8 thou - Range: 273 μm | 107 thou</b></i>
+</div>
+<div>
+         <img class="dark_only" src="../images/revisiting_old_findings/IV006_hm_IV006_dark_0.webp" alt="IV006">
+        <img class="light_only" src="../images/revisiting_old_findings/IV006_hm_IV006_0.webp"      alt="IV006">
+        <i><b>IV006 exterior, private collection of Max Fomitchev-Zamilov - Precision score: 622 - RMSD: 40 μm | 15.7 thou - Range: 454 μm | 178 thou</b></i>
+</div>
+<div>
+         <img class="dark_only" src="../images/revisiting_old_findings/MV008_hm_MV008_dark_0.webp" alt="MV008">
+        <img class="light_only" src="../images/revisiting_old_findings/MV008_hm_MV008_0.webp"      alt="MV008">
+        <i><b>MV008 exterior, Petrie Museum LDUCE-UC15731 - Precision score: 199 - RMSD: 70 μm | 27.6 thou - Range: 1084 μm | 426 thou</b></i>
+</div>
+<div>
+         <img class="dark_only" src="../images/revisiting_old_findings/MV005_hm_MV005_dark_0.webp" alt="MV005">
+        <img class="light_only" src="../images/revisiting_old_findings/MV005_hm_MV005_0.webp"      alt="MV005">
+        <i><b>MV005 exterior, Petrie Museum LDUCE-UC15624 - Precision score: 113 - RMSD: 94 μm | 37 thou - Range: 1275 μm | 167 thou</b></i>
+</div>
+<div>
+         <img class="dark_only" src="../images/revisiting_old_findings/HV002_hm_HV002_dark_0.webp" alt="HV002">
+        <img class="light_only" src="../images/revisiting_old_findings/HV002_hm_HV002_0.webp"      alt="HV002">
+        <i><b>HV002 exterior, private collection of Max Fomitchev-Zamilov - Precision score: 72 - RMSD: 117 μm | 46 thou - Range: 751 μm | 296 thou</b></i>
+</div>
+
+<h2>Methodology: Precision Measurement Protocol</h2>
+<p>The Zeiss CT scan of PV001 provides exceptional mesh density, enabling measurement protocols far more rigorous than the custom measurements reported in 2023 with structured light scanning.</p>
+<p>Prior to analysis, regions with visible damage or breakage were carefully identified and excluded from the measurement dataset. This selective exclusion ensures that only intact surface areas contribute to precision calculations, as damaged regions would introduce artificial variability unrelated to the original manufacturing process. Visual documentation of all excluded regions, appears in the appendix at the end of this article.</p>
+<p>Our measurement approach implements metrological best practices:</p>
+<ul>
+  <li><strong>High-resolution slicing</strong>: Measurements taken at 50μm (0.002 inch) cross-section intervals, no notable curvature of the surface in the measured areas (we measure maxima and minima of the curvature)</li>
+  <li><strong>Algorithmic feature identification</strong>: Feature locations (maxima/minima) identified through systematic scanning of surface topology rather than assumed positions</li>
+  <li><strong>Comprehensive quality metrics</strong>: For every circle fit, we report:
+    <ul>
+      <li>Root Mean Square Deviation (RMSD)</li>
+      <li>Standard Deviation (SD)</li>
+      <li>Measurement range (peak-to-trough)</li>
+      <li>All metrics incorporate <i>all</i> outliers despite using RANSAC for initial fitting</li>
+    </ul>
+  </li>
+  <li><strong>Statistical validation</strong>: Minimum 1,000 inlier points per full-circle measurement (handles being the only exception)</li>
+  <li><strong>Robust circle fitting</strong>: Circle models fitted using RANSAC outlier detection to ensure reliability despite minor surface imperfections</li>
+</ul>
+
+<p>This protocol ensures that all measurements used in subsequent ratio analysis meet metrological standards appropriate for evaluating potential intentional geometric relationships.</p>
+<h2>Feature Measurements with Quality Assessment</h2>
+<p>The following table presents diameter and radius measurements of key horizontal features in PV001, along with associated precision metrics that validate the reliability of each measurement:
+<br><br></p>
+<div>
+        <img class="dark_only" src="../images/revisiting_old_findings/PV001a_outline_dimentional_measurements_dimensions_dark.webp" alt="PV001">
+        <img class="light_only" src="../images/revisiting_old_findings/PV001a_outline_dimentional_measurements_dimensions_light.webp" alt="PV001">
+        <i><b>Measurement locations on PV001</b></i>
+</div>
+
+<p><br><br></p>
+<table>
+  <tr>
+    <th>Dimension</th>
+    <th>Diameter</th>
+    <th>Radius</th>
+    <th>RMSD</th>
+    <th>SD</th>
+    <th>Range</th>
+    <th>N in</th>
+    <th>N out</th>
+  </tr>
+  <tr>
+    <td>A - Lip (max)</td>
+    <td>58.933 mm<br>2.320 in</td>
+    <td>29.466 mm<br>1.160 in</td>
+    <td>33 μm<br>1 thou</td>
+    <td>18 μm<br>1 thou</td>
+    <td>185 μm<br>7 thou</td>
+    <td>1968</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>B - Neck (min)</td>
+    <td>48.996 mm<br>1.929 in</td>
+    <td>24.498 mm<br>0.964 in</td>
+    <td>22 μm<br>1 thou</td>
+    <td>13 μm<br>1 thou</td>
+    <td>126 μm<br>5 thou</td>
+    <td>1895</td>
+    <td>11</td>
+  </tr>
+  <tr>
+    <td>C - Body (max)</td>
+    <td>84.822 mm<br>3.339 in</td>
+    <td>42.411 mm<br>1.670 in</td>
+    <td>16 μm<br>1 thou</td>
+    <td>10 μm<br>0 thou</td>
+    <td>119 μm<br>5 thou</td>
+    <td>3187</td>
+    <td>51</td>
+  </tr>
+  <tr>
+    <td>J - Cavity (max)</td>
+    <td>68.891 mm<br>2.712 in</td>
+    <td>34.446 mm<br>1.356 in</td>
+    <td>25 μm<br>1 thou</td>
+    <td>16 μm<br>1 thou</td>
+    <td>250 μm<br>10 thou</td>
+    <td>3200</td>
+    <td>56</td>
+  </tr>
+  <tr>
+    <td>D - Foot (min)</td>
+    <td>44.425 mm<br>1.749 in</td>
+    <td>22.212 mm<br>0.875 in</td>
+    <td>14 μm<br>1 thou</td>
+    <td>9 μm<br>0 thou</td>
+    <td>99 μm<br>4 thou</td>
+    <td>1586</td>
+    <td>29</td>
+  </tr>
+  <tr>
+    <td>E - Foot (max)</td>
+    <td>45.043 mm<br>1.773 in</td>
+    <td>22.522 mm<br>0.887 in</td>
+    <td>17 μm<br>1 thou</td>
+    <td>10 μm<br>0 thou</td>
+    <td>102 μm<br>4 thou</td>
+    <td>1037</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>G - Handles (max)</td>
+    <td>95.869 mm<br>3.774 in</td>
+    <td>47.934 mm<br>1.887 in</td>
+    <td>20 μm<br>1 thou</td>
+    <td>11 μm<br>0 thou</td>
+    <td>118 μm<br>5 thou</td>
+    <td>339</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>H - Opening (min)</td>
+    <td>37.456 mm<br>1.475 in</td>
+    <td>18.728 mm<br>0.737 in</td>
+    <td>40 μm<br>2 thou</td>
+    <td>20 μm<br>1 thou</td>
+    <td>220 μm<br>9 thou</td>
+    <td>1473</td>
+    <td>68</td>
+  </tr>
+</table>
+
+<p><em>Detailed residual plots and histograms validating these fits appear at the end of the article.</em></p>
+<h3>Critical Quality Assessment:</h3>
+<ul>
+  <li><strong>Consistent precision metrics across features</strong>: All measured features demonstrate RMSD values between 14-40 μm, with standard deviations consistently proportional to RMSD (approximately 0.55-0.65×RMSD). This ratio aligns with expected statistical properties for normally distributed measurement errors.</li>
+
+  <li><strong>Statistical reliability</strong>: The high number of inlier points (1,037-3,200 per feature) exceeds standard metrological requirements for circularity assessment.
+
+  <li><strong>Minimal surface imperfections</strong>: RANSAC outlier detection removed only 1-5% of total points across all features, indicating exceptional surface continuity with minimal damage or scanning artifacts.</li>
+
+  <li><strong>Predictable error distribution</strong>: The relationship between RMSD and measurement range (typically 5-7×RMSD) matches expected statistical behavior for normally distributed deviations. This consistency across all features indicates systematic manufacturing quality rather than random surface anomalies.</li>
+
+  <li><strong>Industrial-grade precision</strong>: The foot region (D and E) demonstrates the highest precision with RMSD values of 14-17 μm - comparable to precision-machined metal components rather than hand-carved stone.</li>
+</ul>
+
+<p><strong>Metrological assessment conclusion</strong>:
+The measurement quality across all features meets and exceeds metrological standards required for reliable ratio analysis. The consistency of precision metrics across multiple independent features demonstrates systematic manufacturing quality rather than isolated areas of exceptional craftsmanship. With RMSD values consistently below 40 μm and standard deviations proportionally low, these measurements provide a scientifically valid foundation for evaluating potential geometric relationships within the artifact.</p>
+<h2>Re-examining Mark's Ratio Claims with Metrological Rigor</h2>
+<p>Mark Qvist's 2023 analysis identified several ratios between features in PV001 that aligned with mathematical constants. With our new CT scan data and comprehensive measurement quality metrics, we can now evaluate these claims using established metrological principles.</p>
+<p>Note, the finding of $\varphi^2$ is as notable as finding $\varphi$, as $\varphi$ has a special mathematical composition where:
+$\varphi = 1.618$ and $\varphi^2 = \varphi + 1 = 2.618$ </p>
+<table>
+  <thead>
+    <tr>
+      <th>Ratio</th>
+      <th>Claimed Match</th>
+      <th>Margin of Error</th>
+      <th>Deviation (max/min)</th>
+      <th>Measurement Quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$A_d / E_r$</td>
+      <td>$\varphi^2$</td>
+      <td>0.05%</td>
+      <td>0.015 / 0.006 mm</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>$B_d / H_r$</td>
+      <td>$\varphi^2$</td>
+      <td>0.07%</td>
+      <td>0.017 / 0.006 mm</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>$A_d / H_r$</td>
+      <td>$\pi$</td>
+      <td>0.17%</td>
+      <td>0.049 / 0.016 mm</td>
+      <td>High</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Metrological Assessment of Ratio Claims</h3>
+<p>When evaluating potential mathematical relationships in manufactured objects, measurement uncertainty must be properly accounted for. The relationship between measured values and theoretical constants must be evaluated in the context of:</p>
+<ol>
+  <li>The precision of the measurements (quantified by RMSD and SD)</li>
+  <li>The propagation of uncertainty through ratio calculations</li>
+  <li>The statistical likelihood of such alignments occurring by chance</li>
+</ol>
+
+<p>For PV001, we can calculate the combined measurement uncertainty for each ratio using standard error propagation techniques. For a ratio $R = X/Y$, the relative uncertainty is:</p>
+<p>
+<script type="math/tex; mode=display">\frac{\sigma_R}{R} = \sqrt{\left(\frac{\sigma_X}{X}\right)^2 + \left(\frac{\sigma_Y}{Y}\right)^2}</script>
+</p>
+<p>Applying this to our measurements:</p>
+<ol start="4">
+  <li>The margin of error for all three primary ratios (0.05-0.17%) is significantly smaller than the combined measurement uncertainty (approximately 0.3-0.5% for these features)</li>
+  <li>The absolute deviations (0.006-0.049 mm) are comparable to or smaller than the RMSD values of the individual measurements</li>
+  <li>The high inlier counts and low relative standard deviations confirm measurement reliability across all features involved</li>
+</ol>
+
+<p>These findings indicate that the observed ratios are not artifacts of measurement noise but represent genuine geometric relationships within the artifact's design. The precision of PV001 exceeds typical manufacturing tolerances for ancient stone vessels by an order of magnitude, creating conditions where such precise geometric relationships could theoretically be incorporated intentionally.</p>
+<h3>Critical Quality Assessment:</h3>
+<ul>
+  <li>The three primary ratios align with $\varphi^2$ and π within 0.05-0.17% error, well below the combined measurement uncertainty of approximately 0.4%</li>
+  <li>All measurements involved have high statistical reliability (RMSD 14-22 μm, SD 9-13 μm, inlier counts >1,000)</li>
+  <li>Deviations are within the precision capabilities of the scan resolution (median vertex spacing of 0.106 mm)</li>
+  <li>The consistency of multiple interrelated ratios strengthens the case for intentional design rather than random occurrence</li>
+</ul>
+
+<p><strong>Metrological conclusion</strong>:<br />
+The CT scan data confirms Mark Qvist's core ratio claims involving $\varphi^2$ and π within metrologically significant margins. Given PV001's exceptional fabrication precision (surface variability RMSD of 22 μm), these alignments cannot be readily dismissed as coincidental. They represent geometric relationships that fall within the precision capabilities of the artifact's manufacture.</p>
+<p>This analysis shifts the discussion from simple numerical alignment to evidence-based metrological assessment. Rather than merely noting proximity to mathematical constants, we now confirm these relationships are statistically significant given the measured precision of the artifact.</p>
+<h2>All Identified Ratios Within Target Range</h2>
+<p>The following table presents all ratios on PV001 that align with combinations of $\varphi^2$ and π (and simple fractions) within a 2% error margin:</p>
+<div>
+        <img class="dark_only" src="../images/revisiting_old_findings/PV001a_outline_dimentional_measurements_dimensions_dark.webp" alt="PV001">
+        <img class="light_only" src="../images/revisiting_old_findings/PV001a_outline_dimentional_measurements_dimensions_light.webp" alt="PV001">
+        <i><b>Measurement locations on PV001</b></i>
+</div>
+<p><br></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Ratio</th>
+<th style="text-align: center;">Possible match</th>
+<th style="text-align: right;">Margin of error</th>
+<th style="text-align: right;">Deviation (max/min)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">$A_d / E_r$</td>
+<td style="text-align: center;">$\varphi^2$</td>
+<td style="text-align: right;">0.05%</td>
+<td style="text-align: right;">0.015 / 0.006 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$B_d / H_r$</td>
+<td style="text-align: center;">$\varphi^2$</td>
+<td style="text-align: right;">0.07%</td>
+<td style="text-align: right;">0.017 / 0.006 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$A_d / H_r$</td>
+<td style="text-align: center;">$\pi$</td>
+<td style="text-align: right;">0.17%</td>
+<td style="text-align: right;">0.049 / 0.016 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$E_r / H_r$</td>
+<td style="text-align: center;">$\pi \over \varphi^2$</td>
+<td style="text-align: right;">0.22%</td>
+<td style="text-align: right;">0.049 / 0.020 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$A_r / B_r$</td>
+<td style="text-align: center;">$\pi \over \varphi^2$</td>
+<td style="text-align: right;">0.23%</td>
+<td style="text-align: right;">0.069 / 0.029 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$G_d / E_r$</td>
+<td style="text-align: center;">$\varphi^3$</td>
+<td style="text-align: right;">0.49%</td>
+<td style="text-align: right;">0.233 / 0.055 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$G_r / A_r$</td>
+<td style="text-align: center;">$\varphi$</td>
+<td style="text-align: right;">0.54%</td>
+<td style="text-align: right;">0.257 / 0.079 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$J_d / C_r$</td>
+<td style="text-align: center;">$\varphi$</td>
+<td style="text-align: right;">0.39%</td>
+<td style="text-align: right;">0.134 / 0.083 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$G_r / B_r$</td>
+<td style="text-align: center;">$\pi \over \varphi$</td>
+<td style="text-align: right;">0.77%</td>
+<td style="text-align: right;">0.369 / 0.095 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$D_r / H_r$</td>
+<td style="text-align: center;">$\pi \over \varphi^2$</td>
+<td style="text-align: right;">1.16%</td>
+<td style="text-align: right;">0.261 / 0.109 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$J_d / D_r$</td>
+<td style="text-align: center;">$\pi$</td>
+<td style="text-align: right;">1.28%</td>
+<td style="text-align: right;">0.446 / 0.142 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$A_d / D_r$</td>
+<td style="text-align: center;">$\varphi^2$</td>
+<td style="text-align: right;">1.34%</td>
+<td style="text-align: right;">0.390 / 0.149 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$D_d / E_r$</td>
+<td style="text-align: center;">$\pi \over \varphi$</td>
+<td style="text-align: right;">1.59%</td>
+<td style="text-align: right;">0.348 / 0.179 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$C_r / D_r$</td>
+<td style="text-align: center;">$\pi \over \varphi$</td>
+<td style="text-align: right;">1.66%</td>
+<td style="text-align: right;">0.717 / 0.185 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$G_d / D_r$</td>
+<td style="text-align: center;">$\varphi^3$</td>
+<td style="text-align: right;">1.89%</td>
+<td style="text-align: right;">0.888 / 0.210 mm</td>
+</tr>
+</tbody>
+</table>
+<p>This comprehensive list serves exploratory purposes only. Not all ratios demonstrate metrological significance, as some show deviations exceeding measurement uncertainty or involve features with lower statistical reliability.</p>
+<h2>The Embedded Unit Hypothesis Revisited</h2>
+<p>Mark Qvist proposed a mathematical relationship among PV001's features in his 2023 analysis. The hypothesis suggests proportional relationships between key dimensions:</p>
+<p>Quote from Mark's 2023 article:</p>
+<blockquote>
+<p><em>"As a sort of mathematical gift, the designers of the object placed a double equivalence here: Since $D_o$ is already produced by $\pi$, the radius of the foot can be more purely described as $R_f = {R_i \times \pi \over \varphi^2}$. Because this creates an equivalence between all four measures, established by fundamental mathematical concepts, the following should be a reasonable extension:"</em></p>
+<p>
+<script type="math/tex; mode=display">
+D_o = {R_i \times \pi} ~~\land~~ D_n = R_i \times\varphi^2 ~~\land~~ R_f = {R_i \times \pi \over \varphi^2}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+R_i = 1 ~~\implies~~ {D_o = \pi} ~~\land~~ {D_n = \varphi^2} ~~\land~~ {R_f = {\pi \over \varphi^2}}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\therefore
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+1 = R_i
+</script>
+</p>
+</blockquote>
+<p>Where:<br>
+- $D_o$ = Outer diameter (feature A)<br>
+- $D_n$ = Neck diameter (feature B)<br>
+- $R_f$ = Foot radius (feature E)<br>
+- $R_i$ = Inner opening radius (feature H)<br></p>
+<p>This framework implies a potential base unit where $R_i = 1$ establishes proportional relationships between all measured features.</p>
+<p>Qvist further suggested that the inner opening radius ($H_r = 18.7278 mm$) corresponds closely to the wavelength of a 16 GHz electromagnetic wave in vacuum:</p>
+<p>
+<script type="math/tex; mode=display">\lambda = {c \over f} = {299,792,458~\text{m/s} \over 16,000,000,000~\text{Hz}} = 18.737028625~\text{mm}</script>
+</p>
+<p>Our measurements show:</p>
+<ul>
+  <li>Measured $H_r$ = 18.7278 mm</li>
+  <li>Theoretical wavelength = 18.7370 mm</li>
+  <li>Absolute deviation = 0.0092 mm</li>
+  <li>Relative error = 0.0491%</li>
+</ul>
+
+<p>This alignment falls within the measurement uncertainty of our CT scan data (RMSD = 40 μm for this feature). However, metrological significance requires more than numerical proximity, it demands statistical evaluation of whether such alignments could occur by chance given PV001's measured precision profile.</p>
+<p>The critical question we must address is:
+<strong>Does PV001's manufacturing precision support claims of intentional mathematical embedding?</strong></p>
+<p>To evaluate this properly, we need to establish:</p>
+<ol>
+  <li>The probability of such precise numerical relationships emerging randomly in an object with PV001's dimensional complexity</li>
+  <li>How these findings compare to statistical baselines from our comparative dataset of ancient artifacts</li>
+</ol>
+
+<p>In the a later section, I present a rigorous probability model that quantifies the likelihood of these mathematical alignments occurring by chance in an object with PV001's specific precision characteristics. This analysis will determine whether the observed relationships exceed expected random occurrence probabilities or fall within statistically plausible variation.</p>
+<p>Until this statistical evaluation is complete, any interpretation of intentional design remains speculative, regardless of how compelling the numerical alignments may appear. Scientific rigor requires that we distinguish between mathematical coincidence and evidence of deliberate construction.</p>
+<h2>The 1-Radian Measurements</h2>
+<p>This section examines measurements of angular features corresponding to 1 radian arcs on PV001. For reference, a radian is a standard unit of angular measure defined as the angle subtended at the center of a circle by an arc equal in length to the radius of the circle. The provided visualization illustrates this geometric relationship:</p>
+<p><center>
+<img alt="Animation illustrating 1 radian" src="../images/revisiting_old_findings/Circle_radians.gif" /><br>
+<em>Image courtesy Lucas Vieira</em>
+</center></p>
+<h3>Upper Vessel Cone Measurements</h3>
+<p>Two measurement areas were analyzed in the cone-shaped region of the upper vessel where the exterior curvature transitions to a conical section. These measurements were obtained from scan data rotated around the z-axis to y=0, x&gt;0, creating a 2D profile that includes all scanned data points.</p>
+<ul>
+  <li><strong>a1 measurement</strong>: Sampled at 5 mm height (0.2 in), positioned where the vessel curvature approximates a straight line</li>
+  <li><strong>a2 measurement</strong>: Sampled at 6 mm height (0.24 in), extending the initial area to include regions where curvature begins to deviate from linearity</li>
+</ul>
+
+<p><img alt="Illustration of radian arc measurements" src="../images/revisiting_old_findings/radian_arc_1.webp" /></p>
+<p>Orthogonal Distance Regression (ODR) was employed for linear fitting, as this method appropriately accounts for uncertainties in all coordinate directions by minimizing perpendicular distances to the fitted line. Unlike standard least squares regression, ODR is suitable for point cloud data where measurement errors exist in multiple dimensions.</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Angle</th>
+<th>Arc angle</th>
+<th>Y intercept</th>
+<th>Standard Deviation</th>
+<th>Median absolute deviation</th>
+<th>Sample size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a1</td>
+<td>0.50004 rad</td>
+<td>1.0001 rad</td>
+<td>157.88 mm</td>
+<td>10 μm (0.4 thou)</td>
+<td>7 μm (0.3 thou)</td>
+<td>268080</td>
+</tr>
+<tr>
+<td>a2</td>
+<td>0.50049 rad</td>
+<td>1.0010 rad</td>
+<td>157.83 mm</td>
+<td>11 μm (0.4 thou)</td>
+<td>8 μm (0.3 thou)</td>
+<td>323314</td>
+</tr>
+</tbody>
+</table>
+<p>The measurements demonstrate exceptional angular consistency with the theoretical 0.5 radian angle (corresponding to a 1 radian arc):</p>
+<ul>
+  <li>a1 deviation: 0.008% from ideal 0.5 radian angle</li>
+  <li>a2 deviation: 0.098% from ideal 0.5 radian angle</li>
+  <li>a1 deviation: 0.01% from ideal 1 radian arc</li>
+  <li>a2 deviation: 0.1% from ideal 1 radian arc</li>
+</ul>
+
+<p>The precision of these features is notable, with standard deviations of 10-11 μm when measuring residuals perpendicular to the fitted line.</p>
+<h3>Handle Measurements</h3>
+<p>Mark Qvist's analysis identified a 1 radian feature on the lower handles. In this reanalysis, we measured the angular slope of the handle cone (0.5 radians) rather than the arc angle.</p>
+<p>To obtain accurate measurements, the side portions of the handles were removed to prevent extraneous scan points from affecting the linear fit. This approach was preferred over algorithmic outlier filtering, which might inadvertently remove valid data points.</p>
+<p><img alt="Illustration of handle trimming" src="../images/revisiting_old_findings/radian_handle_trim.webp" /></p>
+<p>Two measurement areas were analyzed:</p>
+<ul>
+  <li><strong>b1 measurement</strong>: 1.5 mm width (0.06 in)</li>
+  <li><strong>b2 measurement</strong>: 2.0 mm width (0.08 in)</li>
+</ul>
+
+<p><img alt="Illustration of handle measurements" src="../images/revisiting_old_findings/radian_arc_0.5.webp" /></p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Angle</th>
+<th>Arc angle</th>
+<th>Y intercept</th>
+<th>Standard Deviation</th>
+<th>Median absolute deviation</th>
+<th>Sample size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a1</td>
+<td>0.50004 rad</td>
+<td>1.0001 rad</td>
+<td>157.88 mm</td>
+<td>10 μm (0.4 thou)</td>
+<td>7 μm (0.3 thou)</td>
+<td>268080</td>
+</tr>
+<tr>
+<td>a2</td>
+<td>0.50049 rad</td>
+<td>1.0010 rad</td>
+<td>157.83 mm</td>
+<td>11 μm (0.4 thou)</td>
+<td>8 μm (0.3 thou)</td>
+<td>323314</td>
+</tr>
+</tbody>
+</table>
+<p>The angular measurements show:</p>
+<ul>
+  <li>b1 deviation: 0.2% from ideal 0.5 radian angle</li>
+  <li>b2 deviation: 0.06% from ideal 0.5 radian angle</li>
+</ul>
+
+<p>Contrary to Mark's original analysis, our measurements do not confirm that the extrapolated 0.5 radian line intersects the z-axis at the widest part of the interior cavity. When overlaying a perfect 0.5 radian line on the data:</p>
+<ul>
+  <li>Calculated intercept: 51.26 mm (2.02 in)</li>
+  <li>Actual widest cavity point: 52.33 mm (2.06 in)</li>
+  <li>Difference: 1.07 mm (0.042 in)</li>
+</ul>
+
+<p>This discrepancy stems from limitations in the original structured light scan used in Mark's 2023 analysis, which had incomplete interior surface capture. Without full interior data, accurately determining the precise location of the cavity's maximum width would have been impossible.</p>
+<p>The current CT scan provides complete interior geometry, allowing for more precise determination of this feature's location and revealing that the previously proposed geometric relationship does not hold with higher-resolution data. This finding underscores the importance of comprehensive data collection when evaluating potential intentional design elements.</p>
+<h1>Coincidence Or Intentional Design?</h1>
+<p>While the ratios and constants are very definitely <em>present</em>, the real question now is whether this is because of intentional design, or mere chance coincidence.</p>
+<p>To ascertain this in a demonstrable way, I have written a program that statistically calculates the probabilities of such an object occurring by chance, given the constraints that we know and the overall compositional range of the vessels in general. You can <a href="..//data_assets/ratio_probability.py">download, verify and run the source code</a> yourself.</p>
+<p>The program uses a null-hypothesis approach to evaluate the probabilities of certain interlocking ratios existing. You can modify the program to experiment with various configurations and simulation runs yourself. The program calculates three probabilities:</p>
+<ul>
+<li><strong>A)</strong> The probability that a random vessel will have 3 or more significant mathematical ratios in its composition with a margin of error &lt; 0.2%.</li>
+<li><strong>B)</strong> The probability that additionally, the ratios of π, $\varphi$ or $\varphi^2$ exist within the precision envelope of those found in PV001.</li>
+<li><strong>C)</strong> The probability that additionally, those ratios are interconnected, as they are in PV001.</li>
+</ul>
+<p>For a distribution of 100,000 randomly created vases, within time-typical compositional boundaries defined by measurement ranges of Petrie scans with similar compositions, we find:</p>
+<pre><code>A) Probability of finding vessel with 3+ matches (all constants):
+   p = 0.06235 (95% CI: [0.06087, 0.06387])
+   Bayes Factor: 16.04 (Strong evidence)
+   Expected by chance: 6235.00 vessels
+   Chance: 6.2350% (6235.0/100000)
+
+B) Probability with precision requirements (2×&lt;0.07%, 1×&lt;0.2%, π/φ/φ², d/r only):
+   p = 0.00057 (95% CI: [0.00044, 0.00074])
+   Bayes Factor: 1754.39 (Decisive evidence)
+   Expected by chance: 57.00 vessels
+   Chance: 0.0570% (57.0/100000)
+
+C) Probability with interlocking properties:
+   p = 0.00004 (95% CI: [0.00002, 0.00010])
+   Bayes Factor: 25000.00 (Decisive evidence)
+   Chance: 0.0040% (4.0/100000)
+</code></pre>
+<p>The probability of finding an object with three interlocking ratios, like PV001, is approximately $0.004\%$.</p>
+<h1>Do Other Vessels Show Ratios Of Interest?</h1>
+<p>Yes, mathematically significant ratios can be found in other vessels as well. For a sufficiently large ratio search set, almost always at least one per vessel!</p>
+<p>The problem with this approach, though, is that only <em>very</em> few vessels are available in the dataset, with high enough precision to make this statistically meaningful.</p>
+<p>We do have PV003 though. Curiously, another vessel in the private collection of Adam Young.</p>
+<p>What are the odds?</p>
+<div>
+        <img class="dark_only" src="../images/revisiting_old_findings/PV003a_outline_dimentional_measurements_dimensions_dark.webp" alt="PV003">
+        <img class="light_only" src="../images/revisiting_old_findings/PV003a_outline_dimentional_measurements_dimensions_light.webp" alt="PV003">
+        <i><b>Measurement locations on PV001</b></i>
+</div>
+<p><br></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Ratio</th>
+<th style="text-align: center;">Possible match</th>
+<th style="text-align: right;">Margin of error</th>
+<th style="text-align: right;">Deviation (max/min)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">$B_d / H_r$</td>
+<td style="text-align: center;">$\varphi^2$</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.000 / 0.000 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$J_d / H_r$</td>
+<td style="text-align: center;">$\varphi^3$</td>
+<td style="text-align: right;">0.32%</td>
+<td style="text-align: right;">0.103 / 0.024 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$J_r / B_r$</td>
+<td style="text-align: center;">$\varphi$</td>
+<td style="text-align: right;">0.32%</td>
+<td style="text-align: right;">0.103 / 0.032 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$A_d / C_r$</td>
+<td style="text-align: center;">$\varphi$</td>
+<td style="text-align: right;">0.19%</td>
+<td style="text-align: right;">0.055 / 0.034 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$D_r / J_r$</td>
+<td style="text-align: center;">$1/3$</td>
+<td style="text-align: right;">0.44%</td>
+<td style="text-align: right;">0.072 / 0.048 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$A_r / D_r$</td>
+<td style="text-align: center;">$\varphi^2$</td>
+<td style="text-align: right;">1.82%</td>
+<td style="text-align: right;">0.518 / 0.099 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$E_d / H_r$</td>
+<td style="text-align: center;">$\varphi^2$</td>
+<td style="text-align: right;">1.60%</td>
+<td style="text-align: right;">0.320 / 0.122 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$E_d / B_r$</td>
+<td style="text-align: center;">$\pi \over \varphi$</td>
+<td style="text-align: right;">1.35%</td>
+<td style="text-align: right;">0.263 / 0.135 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$E_d / J_r$</td>
+<td style="text-align: center;">$\pi \over \varphi^2$</td>
+<td style="text-align: right;">1.03%</td>
+<td style="text-align: right;">0.201 / 0.167 mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">$J_r / E_r$</td>
+<td style="text-align: center;">$\varphi$</td>
+<td style="text-align: right;">1.95%</td>
+<td style="text-align: right;">0.621 / 0.192 mm</td>
+</tr>
+</tbody>
+</table>
+<h1>Invalidating The Radial Traversal Pattern</h1>
+<p>Mark Qvist's Radial Traversal Pattern hypothesis proposes that PV001 incorporates a specific geometric progression of circles with the defined radius $R(n) = \left({\sqrt{6} \over 2}\right)^n$, with this sequence of circles outlining key features of the vessel, particularly the handle curvature, lip profile, and foot design. While visually compelling in his 2023 analysis, this claim requires rigorous metrological evaluation to determine whether the pattern represents intentional design or statistical artifact.</p>
+<h2>The Metrological Challenge of Circle-Fitting to Arcs</h2>
+<p>When analyzing partial circular features (arcs) rather than complete circles, determining precise circle parameters becomes mathematically underconstrained. This fundamental limitation has significant implications for pattern recognition:</p>
+<ol>
+  <li><strong>Mathematical indeterminacy</strong>: A circular arc of less than 180° does not uniquely determine a circle, multiple circles of different radii can fit the same arc segment within measurement uncertainty</li>
+
+  <li><strong>Measurement sensitivity</strong>: Small variations in point selection or minor surface imperfections can produce substantially different circle parameters, particularly for arcs with low angular coverage</li>
+
+  <li><strong>Algorithm dependency</strong>: Different circle-fitting methods prioritize different error metrics, yielding varying results even on identical datasets</li>
+</ol>
+
+<p>Without acknowledging these constraints, pattern recognition risks becoming numerology rather than archaeology. The Radial Traversal Pattern isn't impossible, it's simply statistically indistinguishable from random variation within PV001's measured precision envelope.</p>
+<h2>Empirical Evidence: Circle-Fitting Instability</h2>
+<p>To demonstrate this instability, I applied nine different circle-fitting algorithms to three key features of PV001, with slight variations in sample location for each feature. When algorithms agreed within the third decimal place, only one representative fit have been included in the results.</p>
+<h3>Tested Fitting Algorithms</h3>
+<ul>
+  <li><strong>skimage_standard</strong>: Standard circle fitting using skimage.measure.CircleModel</li>
+  <li><strong>skimage_ransac</strong>: Robust circle fitting with outlier rejection</li>
+  <li><strong>hyperLSQ</strong>: Hyper-accurate least squares circle fit</li>
+  <li><strong>standardLSQ</strong>: Standard least squares circle fit</li>
+  <li><strong>riemannSWFLa</strong>: Riemann circle fit, SWFL version A</li>
+  <li><strong>lm</strong>: Levenberg-Marquardt optimization in full parameter space</li>
+  <li><strong>prattSVD</strong>: Algebraic circle fit by V. Pratt</li>
+  <li><strong>taubinSVD</strong>: Algebraic circle fit by G. Taubin</li>
+  <li><strong>hyperSVD</strong>: Algebraic circle fit with "hyperaccuracy"</li>
+</ul>
+
+<h3>Neck Curvature Analysis</h3>
+<table>
+  <tr>
+    <th>Sample</th>
+    <th>Benchmark Radius<br>(Radial Traversal Pattern)</th>
+    <th>Measured Radii</th>
+  </tr>
+  <tr>
+    <td>Neck arc 1</td>
+    <td>1.1235 mm</td>
+    <td>skimage_standard: 1.31 mm<br>hyperLSQ: 1.41 mm</td>
+  </tr>
+  <tr>
+    <td>Neck arc 2</td>
+    <td>1.1235 mm</td>
+    <td>skimage_standard: 1.38 mm<br>hyperLSQ: 1.53 mm<br>riemannSWFLa: 1.52 mm</td>
+  </tr>
+  <tr>
+    <td>Neck arc 3</td>
+    <td>1.1235 mm</td>
+    <td>skimage_standard: 1.28 mm<br>hyperLSQ: 1.36 mm<br>riemannSWFLa: 1.35 mm</td>
+  </tr>
+</table>
+
+<div class="image_container">
+    <div class="image_wrapper_3col">
+        <img src="../images/revisiting_old_findings/fitter_test_neck_arc_1.webp" alt="Neck curvature, sample 1, best fit circles">
+        <i><b>Neck curvature, sample 1, best fit circles</b></i>
+    </div>
+    <div class="image_wrapper_3col">
+        <img src="../images/revisiting_old_findings/fitter_test_neck_arc_2.webp" alt="Neck curvature, sample 2, best fit circles">
+        <i><b>Neck curvature, sample 2, best fit circles</b></i>
+    </div>
+    <div class="image_wrapper_3col">
+        <img src="../images/revisiting_old_findings/fitter_test_neck_arc_3.webp" alt="Neck curvature, sample 3, best fit circles">
+        <i><b>Neck curvature, sample 3, best fit circles</b></i>
+    </div>
+</div>
+
+<h3>Lower Lip Analysis</h3>
+<table>
+  <tr>
+    <th>Sample</th>
+    <th>Benchmark Radius<br>(Radial Traversal Pattern)</th>
+    <th>Measured Radii</th>
+  </tr>
+  <tr>
+    <td>Lower lip arc 1</td>
+    <td>10.264 mm</td>
+    <td>skimage_standard: 10.03 mm<br>hyperLSQ: 11.51 mm<br>riemannSWFLa: 11.50 mm</td>
+  </tr>
+  <tr>
+    <td>Lower lip arc 2</td>
+    <td>10.264 mm</td>
+    <td>skimage_standard: 9.27 mm<br>hyperLSQ: 10.92 mm<br>riemannSWFLa: 10.91 mm</td>
+  </tr>
+</table>
+
+<div class="image_container">
+    <div class="image_wrapper_2col">
+        <img src="../images/revisiting_old_findings/fitter_test_lower_lip_arc_1.webp" alt="Lower lip curvature, sample 1, best fit circles">
+        <i><b>Lower lip curvature, sample 1, best fit circles</b></i>
+    </div>
+    <div class="image_wrapper_2col">
+        <img src="../images/revisiting_old_findings/fitter_test_lower_lip_arc_2.webp" alt="Lower lip curvature, sample 2, best fit circles">
+        <i><b>Lower lip curvature, sample 2, best fit circles</b></i>
+    </div>
+</div>
+
+<h3>Foot Curvature Analysis</h3>
+<table>
+  <tr>
+    <th>Sample</th>
+    <th>Benchmark Radius<br>(Radial Traversal Pattern)</th>
+    <th>Measured Radii</th>
+  </tr>
+  <tr>
+    <td>Foot arc 1</td>
+    <td>2.5015 mm</td>
+    <td>skimage_standard: 1.40 mm<br>hyperLSQ: 1.68 mm<br>standardLSQ: 1.63 mm<br>riemannSWFLa: 1.65 mm</td>
+  </tr>
+  <tr>
+    <td>Foot arc 2</td>
+    <td>2.5015 mm</td>
+    <td>skimage_standard: 1.60 mm<br>hyperLSQ: 2.12 mm<br>standardLSQ: 2.07 mm<br>riemannSWFLa: 2.09 mm</td>
+  </tr>
+</table>
+
+<div class="image_container">
+    <div class="image_wrapper_2col">
+        <img src="../images/revisiting_old_findings/fitter_test_foot_arc_1.webp" alt="Foot curvature, sample 1, best fit circles">
+        <i><b>Foot curvature, sample 1, best fit circles</b></i>
+    </div>
+    <div class="image_wrapper_2col">
+        <img src="../images/revisiting_old_findings/fitter_test_foot_arc_2.webp" alt="Foot curvature, sample 2, best fit circles">
+        <i><b>Foot curvature, sample 2, best fit circles</b></i>
+    </div>
+</div>
+
+<p>The results demonstrate significant variability in fitted radii, even with minor changes to sample location. This instability confirms the mathematical principle that arc segments alone cannot reliably determine circle parameters within PV001's precision envelope. </p>
+<p>I therefore reject the proposed hypothesis that the curvature of the artifact was designed using circular features derived from the Radial Traversal Pattern.</p>
+<h2>Testing The Pattern Against CT Scan Data</h2>
+<p>The emergence of the Radial Traversal Pattern rely on circles interlocking with the vessel geometry at selected locations:</p>
+<p><img alt="Radial Traversal Pattern interlocking points" src="../images/revisiting_old_findings/a1_plate_1.webp" />
+<em>Interlocking point of the Radial Traversal Pattern - Image courtesy Mark Qvist</em></p>
+<p>The original structured light scan used by Mark Qvist had limitations in capturing the complete interior cavity. The new CT scan provides full-coverage geometry, allowing direct evaluation of the Radial Traversal Pattern's proposed interlocking points:</p>
+<table>
+  <tr>
+    <th>Feature</th>
+    <th>Predicted by Pattern</th>
+    <th>Measured (CT Scan)</th>
+    <th>Deviation</th>
+  </tr>
+  <tr>
+    <td>Interior cavity diameter</td>
+    <td>68.891 mm</td>
+    <td>68.891 mm</td>
+    <td>0 μm</td>
+  </tr>
+  <tr>
+    <td>Exterior body diameter<br>(should be 68.891 × √6/2)</td>
+    <td>84.3739 mm</td>
+    <td>84.822 mm</td>
+    <td>448 μm</td>
+  </tr>
+</table>
+
+<p>When overlaying the Radial Traversal Pattern's CAD model (provided for this analysis by Mark) on the CT scan data, we observe discrepancies at key interlocking points:</p>
+<ul>
+  <li>Upper cone segment: approximately 459 μm discrepancy</li>
+  <li>Maximum z-location of exterior surface: approximately 254 μm discrepancy</li>
+  <li>Exterior surface maximum: approximately 66 μm discrepancy</li>
+</ul>
+
+<p>It should be noted that these discrepancies could potentially be minimized through parameter adjustment, specifically by modifying the interior cavity diameter used as the pattern's starting point. Such optimization might reduce deviations at certain interlocking points while increasing them at others. Such fine-tuning falls outside the scope of objective pattern validation and is not pursued in this analysis.</p>
+<p><img alt="Radial Traversal Pattern interlocking points" src="../images/revisiting_old_findings/rtp.webp" />
+<em>The Radial Traversal Pattern's interlocking points compared with CT scan data</em></p>
+<h2>Metrological Assessment</h2>
+<p>The evidence reveals two critical issues with the Radial Traversal Pattern hypothesis:</p>
+<ol>
+  <li><strong>Mathematical instability</strong>:<br>Circle-fitting to partial arcs is inherently ambiguous, with multiple valid solutions within measurement uncertainty. The observed variability across fitting algorithms demonstrates that apparent pattern matches can emerge randomly through minor sampling variations.<br><br></li>
+
+  <li><strong>Measurement discrepancies</strong>:<br>The discrepancies must be evaluated in relation to PV001's manufacturing precision. While the RMSD values (14-40 μm) measure local surface consistency for individual circular features, the interlocking point deviations represent global spatial relationships between distinct features. The observed discrepancies (66-459 μm) significantly exceed what would be expected from random variation within the artifact's measured precision envelope.
+
+Crucially, the 66 μm discrepancy at the exterior surface maximum, while smaller than other deviations, is still approximately 1.5-4.7 times larger than the local RMSD values for that region. This indicates that even the "best-fitting" interlocking point represents a meaningful departure from the predicted pattern rather than random manufacturing variation. Increasing the cavity center circle diameter to lower this measured discrepancy would increase the discrepancy to the upper cone segment (already at 459 μm), as this interlocking point depend on the radius of the cavity center circle.</li>
+</ol>
+
+<p>The Radial Traversal Pattern falls into what's called the "confirmation trap": when searching for specific patterns in complex data, we inevitably find apparent matches that align with our expectations.</p>
+<p>True validation would require:</p>
+<ul>
+  <li>Consistent pattern recognition across multiple independent features</li>
+  <li>Deviations consistently smaller than measurement uncertainty</li>
+  <li>Statistical analysis showing the pattern's likelihood exceeds random occurrence probability</li>
+</ul>
+
+<p>Without these elements, any perceived pattern remains suggestive rather than conclusive - a cautionary tale about the importance of metrological rigor when investigating visually compelling patterns.</p>
+<h3>The Importance Of These Conclusions</h3>
+<p>While both the invalidation of the existence of the Radial Traversal Pattern, and the confirmation of a statistically significant existence of mathematical ratios seem like interesting new insights, they are in fact rather inconsequential.</p>
+<p>They are so because of a much deeper, underlying issue with the provenance of the object, and especially the credibility and conduct of some of the people behind its presentation to the world.</p>
+<p>In the following sections, I will detail my experience of lending my skill and assistance to the so-called "Artifact Foundation": A commercial, for-profit incorporated company based in New York, posing as a research organization.</p>
+<h1><h1 id="precision_problem">The Artifact Foundation's Precision Problem</h></h1>
+<h2>When Metrics Fail and Morals Fail Harder</h2>
+<p>In metrology, we understand that measurement errors propagate through calculation chains. But what happens when the integrity of the process itself becomes the primary error source?</p>
+<p>The Artifact Foundation's conduct provides a textbook case of how a series of ethical breaches compound into catastrophic unreliability - exactly the kind of scientific misconduct that undermines legitimate research into ancient civilizations.</p>
+<h2>Error Propagation 101: From Minor Misrepresentations to Major Fabrications</h2>
+<p>Scientific integrity operates on the same mathematical principles as measurement precision: small errors amplify through calculation chains. What began as seemingly minor ethical lapses at the Artifact Foundation, have propagated into a complete breakdown of scholarly trust.</p>
+<p>During almost two years of involvement with the project, this became inescapably obvious, one step at a time.</p>
+<h3>The Collaboration Timeline: Two Years of Trust Eroded in Weeks</h3>
+<p>From mid 2023 to February 2025, I worked extensively with Adam Young (with Karoly Poka joining the project August 2024) under what I believed was a shared commitment to uncovering the truth about ancient Egyptian stone vessels:</p>
+<ul>
+<li><b>Mid 2023:</b> I started assisting Adam with analyzing his private vessel collection and building a comprehensive methodological approach and software framework for deterministically assessing precision in ancient artifacts. I received all scan datasets freely and without restrictions, and in turn provided analysis, draft reports and technical help and expertise.<br><br></li>
+<li><b>August 2024:</b> Adam invited me to join the Petrie Museum project after receiving my previous precision analysis work. The project was presented as an open research collaboration, and would involve:</li>
+<ul>
+<li><i>Adam's role</i>: Giving presentations and talks about findings</li>
+<li><i>Karoly's role</i>: Creating YouTube content about the research</li>
+<li><i>My role</i>: Providing statistical analysis and precision reports that would underpin the project (unpaid, non-profit)<br><br></li>
+</ul>
+<li><b>Pre-London Trip:</b> I spent weeks analyzing 3D printed test-vessels to determine optimal scanning parameters, ensuring data quality before Adam and Karoly traveled to the Petrie Museum.<br><br></li>
+
+<li><b>Data Sharing:</b> All resulting scans from the Petrie Museum were shared with me freely, with no restrictions on use, publishing, or distribution.<br><br></li>
+
+<li><b>Analysis Period:</b> I dedicated approximately 15 hours per week for four months on:</li>
+<ul>
+<li>Analyzing vessel geometries</li>
+<li>Answering countless technical questions</li>
+<li>Integrating findings into comprehensive reports</li>
+<li>Finishing the development of my solid analytical framework, designed for correct assessment of ancient artifacts.</li>
+</ul>
+</ul>
+<p>This represented nearly two years of invested work, with everything performed completely unpaid and out of genuine scholarly interest.</p>
+<h3>The Revelation Of Intent: When Research Became Commercial Property</h3>
+<p>The breakdown began in February 2025 when inconvenient truths emerged from my analysis:</p>
+<ul>
+
+<li><b>Unexpected Handmade Precision</b>: When a handmade alabaster vase showed higher precision than Adam had expected, he first dismissed the result. When I explained to him how and why this handmade alabaster vase <i>was</i> actually quite precise, he sought to find alternative explanations, rather than simply evaluating the results on their own basis.<br><br>Finally, he decided that looking at full-vessel circularity would not be "very meaningful" - and that they would need to "think of another way", such as looking at isolated components of the object. In hindsight, it was at this point our "differing approaches" started becoming clear.<br><br>In the results currently published by Karoly and Adam, their precision metric has been altered to use median errors - potentially discarding large amounts of precision errors in the vessels. Such an approach should never be used in serious metrology studies.<br><br>
+
+<div class="image_container">
+  <img src="../images/revisiting_old_findings/fraud/dont_use_complete_circularity_sd.webp" alt="documentation">
+</div><br>
+
+<li><b>Codebase Handover Demand</b>: Shortly before I was kicked from the project, Karoly wanted me to transfer my full analytics codebase to Artifact Foundation, claiming it was needed to analyze more vessels quickly. I declined, as I was actively developing the system with daily commits and explained that teaching him to use it would delay completion of the last report - something they were also pushing for. Additionally, I had already informed them it would be released publicly when everything had been completed and thoroughly tested and reviewed.<br><br>
+
+<div class="image_container">
+  <img src="../images/revisiting_old_findings/fraud/asking_for_code.webp" alt="Karoly asking for the code">
+</div><br>
+
+I explained to them that it would be irresponsible to publish or present anything before all data, results and methodologies had been triple-checked and reviewed.<br><br></li>
+
+<li><b>Publication Timeline Conflict</b>: When Karoly urgently requested data for a YouTube video, I proposed we coordinate publication dates to ensure proper context. He became upset, asking what kind of publication I intended and where. When I humorously asked if he had intended to just use my material in his videos without attribution, and without the actual source material being published, he called it an accusation, and became even more upset.<br><br></li>
+
+<div class="image_container">
+  <img src="../images/revisiting_old_findings/fraud/reports_available.webp" alt="">
+</div><br>
+
+<li><b>Unauthorized Use</b>: I then discovered Karoly had <i>already</i> <a href="https://youtu.be/8A6WaNIpCAY?t=4813">used material and data from my draft reports</a> - clearly watermarked "INTERNAL DRAFT, NOT FOR REDISTRIBUTION". No references or attribution. The reports also contained a clear author and copyright notice on every page - which he had conveniently cropped out of his YouTube video.<br><br></li>
+
+<div class="image_container">
+  <img src="../images/revisiting_old_findings/fraud/copyright_karoly2.webp" alt="Karoly asking for the code">
+</div><br>
+
+<li><b>Protection Of Research Integrity</b>: After repeated requests to refrain from using unpublished material were ignored, I deleted my draft reports from Adam's SharePoint server, to clearly signal that data from draft reports should not be used until everything had been triple-checked and reviewed.<br><br></li>
+
+<li><b>Project Termination</b>: The next day, Adam kicked me off the project, blocked all access, and declared: "You do not have permission to discuss or release any data that you are in possession of".<br><br></li>
+
+
+<center>
+  <img src="../images/revisiting_old_findings/fraud/ourdata.webp" alt="Adam demanding I never discuss or release any data">
+</center><br>
+
+<li>He then falsely claimed:<br><br></li>
+<ul>
+  <li>That I was "paid several times" (referencing two donations I had never asked for, which he spontaneously gave, and covering very little of my more than 1500 hours spent on the project). Back then, I accepted this donation as a token of gratitude for the work I had performed, now it was being used against me.<br><br>
+    <center><img src="../images/revisiting_old_findings/fraud/paid_several_times.webp" alt="Adam stating I was paid several times."></center>
+  <br></li>
+  <li>That I had failed to submit code for review (they never requested that)<br><br><center><img src="../images/revisiting_old_findings/fraud/destroyed_files.webp" alt="Adam stating I destroyed files." width="66%"></center><br></li>
+  <li>That I had "destroyed company files" (I deleted my own clearly labeled drafts so he wouldn't misrepresent more data - even then, the files were still available on the server's backup)<br><br>
+  </li>
+  <li>Further, Adam fabricated and spread a story that the Petrie Museum required review of all material before publication.<br><br>
+  <div class="image_container" style="text-align:center;">
+    <img src="../images/revisiting_old_findings/fraud/museum.webp" alt="Adam stating the Petrie Museum needs to review data before publication.">
+  </div><br>
+  This was a direct lie - As evidenced by a rather awkward conversation with the Petrie Museum staff. Neither Adam nor Karoly had <b>ever</b> mentioned something like that - until after they kicked me from the project. When I heard about this, I got in contact with the Petrie Museum, who confirmed that no such restrictions existed.<br><br>
+
+  </li>
+</ul>
+
+<li><b>Smear Campaign</b>: Adam then started emailing other people involved in the project with a gross and completely fabricated story about why I had been kicked out. While I have seen and read a number of these emails, they were sent to other people in the project, and I will let those who received them decide whether or not to disclose what was contained therein.<br><br></li>
+
+<li><b>Logo Theft Accusation</b>: Adam publicly claimed that I was using <i>their</i> logo, when in fact <i>he</i> had scissored it directly from one of my draft reports.<br><br>
+<div class="image_container" style="text-align:center;">
+    <img src="../images/revisiting_old_findings/fraud/logo_claim.webp" alt="Adam stating I was using their logo">
+  </div><br></li>
+
+</ul>
+
+<h3>The Cosmic Summit Incidents: Threats, Data Manipulation &amp; Performance</h3>
+<p>The most egregious example of deliberate deception occurred at the 2024 Cosmic Summit, where Adam Young presented fabricated data to support extraordinary claims:</p>
+<ul>
+<li>
+<p><strong>Presentation of draft and example data without attributions</strong><br>At the conference, <a href="https://youtu.be/9k0E9j0nsgw?t=2512">Adam Young presented several slides</a> using data from my <strong><em>draft</em></strong> research material, without referencing me as the author (though, in several other places he <em>did</em> provide proper attribution, so apparently he is <em>somewhat</em> capable of this). He never asked about, or told me he had used my draft material in this manner. I found out when I watched the video in March 2025.
+<br />
+<div class="image_container" style="align:center">
+    <img src="../images/revisiting_old_findings/fraud/adam_cs_1.webp" alt="Adam stating the Petrie Museum needs to review data before publication.">
+  </div>
+</p>
+</li>
+<li>
+<p><strong>Deliberate Use of Incorrect Data</strong><br>Despite receiving a corrected analysis <em>a week prior</em>, <a href="https://youtu.be/9k0E9j0nsgw?t=3035">Adam presented outdated draft data</a> I'd explicitly labeled as incorrect (due to a poorly aligned scan, that was sent as an <em>example</em>). By using data he had been informed was incorrect, Adam made a CNC vessel replica look very bad compared to the "real ancient artifact" on which it was based.
+<br />
+<div class="image_container" style="align:center">
+    <img src="../images/revisiting_old_findings/fraud/adam_cs_fabricated_data.webp" alt="Adam presenting invalid data.">
+    <i>"Invalid data" emphasis added in red</i>
+  </div>
+</p>
+</li>
+<li>
+<p><strong>Data Substitution Fraud</strong><br>For the "real ancient artifact" vessel comparison, he substituted data from his private collection piece PV002 (previously named A01) instead of the actual vessel's original artifact PV006 - creating a false narrative of extraordinary ancient precision.
+<br />
+<div class="image_container" style="align:center">
+    <img src="../images/revisiting_old_findings/fraud/adam_cs_fabricated_data2.webp" alt="Adam using data different from the original artifact on which the CNC replication was made.">
+    <i>Actual source of the data - not the original!</i>
+  </div>
+</p>
+</li>
+</ul>
+<p>Further, at another live event hosted by Cosmic Summit in 2025, advertised with the text: "On March 22, Adam Young will be revealing the secrets of ancient Egyptian vases—objects so precise they challenge everything we know":</p>
+<ul>
+<li><strong>Plagiarism &amp; Copyright Violation</strong><br>The Artifact Foundation <em>again</em> used material from my unpublished draft reports, this time to advertise their paid Cosmic Summit event (Price tag: $\$$50 online, over $\$$200 in person) before I'd published anything myself. When I contacted Cosmic Summit about this, they removed the material from their website, and promised to get back to me - which they never did.</li>
+</ul>
+<div class="image_container">
+    <div class="image_wrapper_2col">
+        <img src="../images/revisiting_old_findings/fraud/cs.webp" alt="Artifact Foundation using my copyrighted material">
+    </div>
+    <div class="image_wrapper_2col">
+        <img src="../images/revisiting_old_findings/fraud/csx.webp" alt="Artifact Foundation using my copyrighted material">
+    </div>
+</div>
+<p><img alt="Adam says they will not be using my results" src="../images/revisiting_old_findings/fraud/Adam_results.webp" /></p>
+<ul>
+<li><strong>Fake Legal Threats</strong><br>Before the Cosmic Summit event, Karoly sent me a <a href="../images/revisiting_old_findings/fraud/demand_letter.jpg">fabricated cease-and-desist letter</a> by email, claiming that he had "consulted with several attorneys on this matter" - an obvious falsehood given its legal flaws and inconsistent wording. It looked suspiciously like it had been authored by ChatGPT.<br><br>In this letter, he demanded I never publish anything - or legal action demanding monetary compensation would ensue. In the letter, he tried to justify his demands under the guise of violating "trade secrets" and harming future income streams for Karoly. Acceptance of his demands carried a deadline of March 21st, the day before their Cosmic Summit presentation - giving me all of 3 days to respond. This is so farcical I struggle for words.</li>
+</ul>
+<p><center><img src="../images/revisiting_old_findings/fraud/lawsuit_threat.webp" alt="Karoly's legal threats" width="85%"></center></p>
+<ul>
+<li><b>Misleading Presentation Content</b><br>The promised "revelation" about ancient vase precision turned out to be:</li>
+<ol type="a">
+  <li>A 1-hour lecture on artifact dating (unrelated to analysis)</li>
+  <li>Karoly performing a sponsorship segment about his FreeScan Combo scanner</li>
+  <li>A Q&A that was cut off for online attendees</li>
+</ol>
+</ul>
+
+<h2>The Pattern of Misconduct: Beyond Isolated Incidents</h2>
+<p>This wasn't a series of unfortunate accidents later corrected, but a persistent, systematic pattern of scientific misconduct:</p>
+<h3>False Claims and Fabrications</h3>
+<ul>
+<li>
+<p><strong>Museum Policy Lie</strong><br>After their direct demands failed, to prevent me from publishing, Adam and Karoly falsely claimed that the Petrie Museum required review and acceptance of research material before publication. The museum confirmed this was untrue.</p>
+</li>
+<li>
+<p><strong>Silencing By Legal Threats</strong><br>Karoly attempted to force me into submission by threatening a lawsuit.</p>
+</li>
+<li>
+<p><strong>Logo Theft Accusation</strong><br>Adam publicly accused me of stealing his logo, a claim that collapsed when evidence showed he had taken the image from one of my early copyrighted draft reports. Despite this, he continues to insist he created it in Photoshop.</p>
+</li>
+<li>
+<p><strong>Missing Attribution &amp; Plagiarism</strong><br>Karoly and Adam claimed they would never use my material without crediting me, while simultaneously: Karoly used images from my unfinished, INTERNAL DRAFT reports on YouTube. Adam had presented my draft material at the Cosmic Summit event 2024.</p>
+</li>
+<li>
+<p><strong>Code Availability Misrepresentation</strong><br>Attempting to justify his actions, Adam repeatedly made variations of the claim that "it was unprofessional not to submit your code for vetting", yet they <strong>never</strong> actually asked for this! What they did ask for - shortly before kicking me from the project - was to transfer the entire codebase of my analysis framework to Artifact Foundation, so <em>others</em> in Artifact Foundation could use it to analyze vessels themselves.</p>
+</li>
+</ul>
+<h3>Methodological Corruption</h3>
+<p>The Artifact Foundation's misconduct has severe implications that invalidate their entire analytical framework:</p>
+<ul>
+<li>
+<p><strong>Broken Chain of Trust</strong><br>Without verifiable data provenance, all precision claims become scientifically meaningless. In industrial metrology, a single broken chain link invalidates certification; the documented number falls significantly above that here. Artifact Foundation has clearly demonstrated that they hold no reservations towards neither lying, manipulating data, censoring inconvenient results, nor direct threats.</p>
+</li>
+<li>
+<p><strong>Invalid Methodology &amp; Precision Metric</strong><br>The Geometric Mean metric, employed by Artifact Foundation is not a metric, but a meaningless charade that can be tweaked and manipulated to produce desired results. This has been thoroughly demonstrated <a href="comparative_metrological_analysis.html">in my prior work</a>. The method is particularly vulnerable to deliberate misalignment. A mere 0.05° rotational shift can artificially inflate or deflate the final scores by 17%. The Artifact Foundation have already presented their research using their mathematically invalid metric.</p>
+</li>
+<li>
+<p><strong>Confirmation Bias Institutionalized</strong><br>By using known incorrect data and swapping results between artifacts at presentations, they revealed their true priority: Confirming pre-existing beliefs rather than discovering truth.</p>
+</li>
+<li>
+<p><strong>Statistical Misapplication</strong><br>Their use of medians discards 50% of error data, artificially suppressing deviations critical to precision assessment - industrial metrology prioritizes maximum deviations, not central tendencies.</p>
+</li>
+</ul>
+<h2>Coda: A Lesson in Scientific Hygiene</h2>
+<p><em><strong>To Adam Young and Karoly Poka</strong>: Your "foundation" has mastered the art of Error Propagation - lies about museum policies and fabrications in many flavors have progressively compounded into catastrophic falsity about human history.</em></p>
+<p><em>In metrology, we discard measurements when the error propagation exceeds acceptable thresholds. The same standard applies to scientific integrity: Your documented pattern of misconduct invalidates not just individual findings, but your entire analytical framework.</em></p>
+<p><em>The most precise measurement you've made isn't on ancient vessels - it's of how quickly scholarly ethics can deteriorate when commercial and personal interests override truth-seeking. PV001 may be a masterpiece, but your foundation's true artifact is a monument to how not to do science: Where metrics are malleable, data is proprietary, and truth is whatever sells tickets to the next Cosmic Summit.</em></p>
+<p><strong>To all of us</strong>: Extraordinary precision claims require extraordinary evidence - <em>not extraordinary evasion of peer review</em>. When researchers deliberately present incorrect data while claiming ancient technological marvels, they've crossed from questionable scholarship into scientific misconduct.</p>
+<p>The only artifacts with a precision score greater than 1,000 are two of Adam's vessels (PV001 and PV003). No industrial vase shows this level of precision across the exterior curvature. The maximum exterior surface Precision Score of industrial vases is IV006 with just 622. Remember, the precision score is exponential - it punishes minor surface deviations exponentially.</p>
+<p>The high scores of PV001 and PV003 introduce further questions: You would expect such an old artifact to show wear and tear (even granite vessels), yet their exterior smoothness exceeds new ones produced on modern lathes. Metrology without integrity is numerology; scholarship without ethics is theater.</p>
+<p>Furthermore, the only two known examples of such precise vessels are both privately held <em>by the same individual</em>, while no other known purportedly ancient object comes even close - across a now substantive dataset. Statistically, this is <em>highly</em> suspicious. Other privately held vessels <em>claimed</em> as high precision, such as those of Matt Beall, also fall way below (one could speculate this is why Matt does not want me to analyze and publish reports on his collection).</p>
+<p><strong>To the field</strong>: Demand raw scan data, protocol transparency, and third-party validation before engaging with private collections. As demonstrated here, extraordinary precision claims should not just be taken at face value, but undergo careful, multi-peer scrutiny.</p>
+<h2>Further Data Misconduct In The field</h2>
+<h3>Matt Beall's Edited Scan</h3>
+<p>I worked on Matt's scans at the end of 2023, when he first started scanning his vessels and before he had his podcast. Again the project was presented as open-source, scans were shared freely. When I called for a meeting with several interested individuals in the community, to present what I was working on and discuss the methodology and findings, Matt send me a message:</p>
+<blockquote>
+<p>"Just a reminder that I do want to keep the results of my vases confidential. I have a podcast now, I’m working with [XXX], and I’m also working with [XXX] and [XXX], all separately at times and together at times. I need to be able to pick and choose what vases to share with each group at different times, so please only share the reports and results of my vases with me."</p>
+</blockquote>
+<p>I rejected - I wanted a transparent and open-data project - Not treating any findings like they were secrets to be hoarded and exploited. At that time, I did agree not to share the files - A promise I have kept until now, but at this point I will have to expose something important.</p>
+<p>In March 2025 I contacted Matt again with an offer: To analyze all his vessel scans and make detailed precision reports covering his full collection, free of charge - He declined my offer: Not interested.</p>
+<p>Scans from private collection are only being shared with selected individuals. Both Matt and Adam are withholding their scans from both researchers and the public alike, with only a selected few being allowed to "verify" their splendid precision.</p>
+<p>In April of this year, I made Ben van Kerkwyk and Matt Beall aware, that at least one of the STL files hosted on their respective websites (the vase titled <a href="https://unchartedx.com/site/vase-scan-resources/">Vase 3 "Spinner"</a> and  <a href="https://www.ancientstonevases.com/pages/ancient-vessel-scan-report">OG Spinner</a>, from Matt Beall's private collection, was extensively manipulated. I know, because I am in possession of the <em>original</em> CT scan data, which Matt had me analyze more than two years ago. Ben did nothing, and Matt attempted a vague deflection by claiming I was just "unfamiliar with CT scanning":</p>
+<blockquote>
+<p>"Your confusion may stem from being unfamiliar with CT scanning. [...] There’s no spinner vase on my website. I don’t know what you’re talking about."</p>
+</blockquote>
+<p>Well, this is what I'm talking about:</p>
+<p><img alt="Original scan - detailed vertex zoom" src="../images/revisiting_old_findings/fraud/spinner_org.webp" /><center><em>Detailed mesh zoom of original scan</em></center><br/></p>
+<p><img alt="Scan available for download - detailed vertex zoom" src="../images/revisiting_old_findings/fraud/spinner_web.webp" /><center><em>Detailed mesh zoom of downloadable scan</em></center><br/></p>
+<video width="100%" autoplay loop muted>
+  <source src="../images/revisiting_old_findings/fraud/PV008c_and_PV008.webm"/>
+  Your browser does not support playing this video.
+</video>
+<p><center><em>Animated comparison of original and modified data</em></center><br/></p>
+<p>The scan has clearly been edited and reworked, now showing a completely uniform vertex structure. Not what you would expect from a CT scan. It looks like someone took the raw CT scan, completely smoothed out the surface and then added a textured bump-map.</p>
+<p>For that vessel, at least, the data being presented publicly now is <strong>not</strong> data, it is an artists re-interpretation. Are there more like it? I'm tempted to simply release my entire dataset of raw, high-resolution scans, so everyone can validate for themselves.</p>
+<h3>Selective Reporting</h3>
+<p>Ben, with all due respect, this one is for you: You were made aware of this <em>entire</em> situation <em>months</em> ago. It's easy to hide behind the phrase "I'm just the reporter, sharing what was shared to me" - No personal accountability, no critical thinking about the data being shared, just acting like a parrot who only share data conforming to the needs of a few friends.</p>
+<p>You were already informed by me in April about manipulated scan data, and you did nothing. The reporting is one-sided, genuine criticism is ignored, while the dramatic invalid criticism is made fun of. This is not the role of a reporter, but the role of someone spreading propaganda.</p>
+<p>I'm sorry to be so hard here, but it has to be said! I do believe in the importance of investigating a potential lost ancient civilization, and that there are many things we do not yet know! But we can only get to the real truth if we stop parroting liars with fundamentally flawed methodologies.</p>
+<p>I ask you with respect, correct this mess, do share all aspects of the story, and the real data: Regain your reputation as one of the front-runners in searching for the truth.</p>
+<p>All this is said with high respect towards your prior work. Do not fall prey to the same trap as everyone else these days - The community needs a lighthouse. Please shine your light without filtering through a flawed prism.</p>
+<h2>The Final Calculation: Why PV001 Defies Authenticity</h2>
+<p>Considered in the light of the Artifact Foundation's catastrophic cascade of integrity failures, the impossible precision of PV001 becomes explainable under a very simple framework:</p>
+<ul>
+<li>
+<p>The object <em>does</em> requires sophisticated design-to-production transfer capabilities, although not as advanced as first hypothesized in Mark's original article, due to the non-existence of the radial traversal pattern.</p>
+</li>
+<li>
+<p>As evidenced by the <em>verifiably authentic</em> Egyptian masterpieces, human beings have always sought to push the limits of artisanal production. The object aligns well with such mastery-seeking; but temporally located in the 20th century, though. Not 3.000 BCE.</p>
+</li>
+<li>
+<p>No surface wear or weathering is detectable in the scan data. The object is smoother than a freshly milled, modern CNC piece.</p>
+</li>
+<li>
+<p>The object's precision is <strong>only</strong> impossible if it is artificially transposed to pre-modern times. In a mid-to-late 20th century production facility, it is definitely a curiosity and a masterpiece, but entirely plausible.</p>
+</li>
+</ul>
+<p>The data is <em>far</em> more probable under modern forgery than a pre-assumed 5,000+ year history.</p>
+<h1>Personal Conclusion</h1>
+<p>I finished what I set out to do, and I learned a lot along the way!</p>
+<p>Extraordinary precision claims require extraordinary evidence. What we have instead is an extraordinary pattern of misconduct. In metrology as in all science: When the instrument is compromised, so are its readings. The only thing more precisely engineered than these "artifacts" is Artifact Foundation's evasion of scientific accountability.</p>
+<p>The artifact PV001 still stands as the absolute unicorn of the dataset. Exceeding all other artifacts, not only in fabrication precision but in mathematical relations as well.</p>
+<p>While refuting the existence of the radial traversal pattern, I've demonstrated the mathematical ratio measurements proposed by Mark to be true. This very clearly suggests a blueprint being in existence for this artifact, before its physical production in granite. Something that could only have been achieved with sophisticated technology, as stated by Mark.</p>
+<p>That the Radial Traversal Pattern was rejected does not change the fact that this artifact displays some amazing features, not seen in any other scanned artifacts.</p>
+<p><strong>The existence of PV001 can only mean one of three things:</strong></p>
+<ul>
+<li>
+<p>The artifact is indeed genuine and 5,000+ years old - which would represent one of archaeology's most profound discoveries, evidence of a sophisticated civilization that came before us.</p>
+</li>
+<li>
+<p>It is a modern replica, produced with minute attention to detail and great craftsmanship.</p>
+</li>
+<li>
+<p>It is a genuine artifact (purchased in the 1980'es as per Adam Young's claims), but later reworked on modern machines: Using precision-grinding, polishing and then corrected until it achieved its marvelous precision.</p>
+</li>
+</ul>
+<hr />
+<p><center><b>My current personal conclusion in regards to the famous PV001 artifact is this:</b></p>
+<p>The age of this "artifact" is not 5,000+ years. More likely, that number is off by a factor of ~1,000.</center></p>
+<hr />
+<p>Everyone can make mistakes, it happens in science as it happens in daily life. When scientists find logical flaws or errors in each others work, the critique should be highly valued - errors and logical flaws will be corrected. Everyone benefits.</p>
+<p>This is not the case with the data produced by the Artifact Foundation. Their tactic is to block and censor other researcher's materials (especially critiques of their work). They have a track record of data manipulation to make the results match what they set out to prove. This type of "research" and scientific practice should not be welcomed in the field. In this light, it is a very hard sell to criticize figures like Flint Dibble as representative of the general flaws in mainstream archeology. </p>
+<p>Now the alternative community must hold the same standards internally as externally - If not, the level of dogma here is the same as the level of dogma they accuse others of. If we've set out to understand whether ancient lost civilizations existed (as I believe they might have) we need to dismiss untruthful sources like the Artifact Foundation. They are diluting the credibility of the actual work done by others, hampering the ability to find the very evidence and data so sorely needed to actually test the hypothesis!</p>
+<p>Does this mean I outright reject the hypothesis, set forth by knowledgeable individuals in the community; that there might have been a lost civilization before us, a technologically advance civilization that crumbled, and from its rubble we build our own? No, for me there are still many pointers to this hypothesis that needs <em>proper</em> investigation - no matter if that leads to confirmation or dismissal.</p>
+<p>I still believe in the importance of investigating the hypothesis, but until valid evidence presents itself, it will only be a hypothesis.</p>
+<p>I came into this project hoping to find solid evidence that could be used to ascertain the existence of this lost civilization, instead I found a noisy dataset (both physically and morally). If the community really wishes to rewrite history by documenting a so far unknown civilization, we need to stay rigorous and true.</p>
+<p>The dogma that the community accuses archeologists of - that they hold on to beliefs in spite of counter-evidence - seems to also be true within that very community. Many people want to conjure up evidence so badly that they distort the data and reject what the data actually shows.</p>
+<p><center><b>Data &gt; Dogma</b>. Is the only way we will ever get to the truth.</center></p>
+<p>And of course, if a genuine museum artifact is presented, which match the incredible precision of PV001 and PV003 - I will be the first to offer a serious (and truly open and non-profit) investigation of it. If this data is presented by the Artifact Foundation though, we must reject it due to their currently demonstrated misconduct.</p>
+<p>We still have a scientist in our midst who is not swayed by dogma and who knows how to follow evidence wherever it leads - I encourage you to follow the analysis put forth in <a href="https://maximus.energy/index.php/category/ancient-egypt/">Max Fomitchev-Zamilov's articles</a>, I'm sure he will continue the search for scans of precision artifacts and perform rigorous analysis of the datasets. Max, if you ever find a vessel approaching the precision of PV001, you know how to find me - I would be compelled into the field once again.</p>
+<p>It is painful to watch real evidence drowned in the noise of charlatans, clawing for attention and polluting the field with flawed data and wishful thinking.</p>
+<p>The currency in which I was paid for the time spent on my research was <strong>curiosity</strong> and the <strong>happiness of discovery and sharing knowledge</strong>. But I am a human and not a robot. The drama of the vase scan project, with ridiculous claims, censoring and insults, is not an environment I want to waste my skill, energy and time in.</p>
+<p>I engaged in this endeavor freely and without expecting any payment other than my own happiness in the pursuit of the truth. Until the field grows a spine and shows some integrity, I will invest my energy elsewhere.</p>
+<p><br><br><br></p>
+<h1>Appendix</h1>
+<p>Detailed residuals plots of the dimensional measurements on PV001.</p>
+<h3>Measurement of A - Lip</h3>
+<p><img alt="A - Lip" src="../images/revisiting_old_findings/appendix/PV001_dim_horizontal_A-Lip.webp" /></p>
+<h3>Measurement of B - Neck</h3>
+<p><img alt="A - Lip" src="../images/revisiting_old_findings/appendix/PV001_dim_horizontal_B-Neck.webp" /></p>
+<h3>Measurement of C - Body</h3>
+<p><img alt="A - Lip" src="../images/revisiting_old_findings/appendix/PV001_dim_horizontal_C-Body.webp" /></p>
+<h3>Measurement of D - Foot min</h3>
+<p><img alt="A - Lip" src="../images/revisiting_old_findings/appendix/PV001_dim_horizontal_D-Foot.webp" /></p>
+<h3>Measurement of E - Foot max</h3>
+<p><img alt="A - Lip" src="../images/revisiting_old_findings/appendix/PV001_dim_horizontal_E-Foot.webp" /></p>
+<h3>Measurement of G - Handles</h3>
+<p><img alt="A - Lip" src="../images/revisiting_old_findings/appendix/PV001_dim_horizontal_G-Handles.webp" /></p>
+<h3>Measurement of J - Cavity</h3>
+<p><img alt="A - Lip" src="../images/revisiting_old_findings/appendix/PV001_dim_horizontal_J-Cavity.webp" /></p>
+<hr />
+<p><center><i>This article is licensed under CreativeCommons BY-NC-SA 4.0</i></center></p>
+<br/><hr/><span class="no_print"><center style="margin-top: 0.75em;"><i>Copyright 2025 - Stine Gerdes / Arc Scientific</i></center></span>
+
+</body></html>

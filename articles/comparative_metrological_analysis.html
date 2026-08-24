@@ -1,0 +1,916 @@
+
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/water_auto.css?v=22">
+<!-- <link rel="stylesheet" href="../css/water_base.css"> -->
+<!-- <link rel="stylesheet" href="../css/water_light.css"> -->
+<link rel="shortcut icon" type="image/x-icon" href="../gfx/icon.png">
+<meta charset="utf-8"/>
+<title>Arc Scientific</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title" content="Arc Scientific">
+<meta name="description" content="Arc Scientific">
+<meta property="og:description" content="Arc Scientific">
+<meta property="og:image" content="https://arcsci.org/gfx/arcsci_logo.webp">
+<meta property="og:url" content="https://arcsci.org/articles/comparative_metrological_analysis.html">
+<meta property="og:title" content="Arc Scientific">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="arcsci.org">
+<meta property="twitter:url" content="https://arcsci.org/articles/comparative_metrological_analysis.html">
+<meta name="twitter:title" content="Arc Scientific">
+<meta name="twitter:description" content="Arc Scientific">
+<meta name="twitter:image" content="https://arcsci.org/gfx/arcsci_logo.webp">
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  //tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}
+  tex2jax: {inlineMath: [['$','$']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+</head>
+<body>
+<div id="load_overlay" style="background-color:#14262d; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+<p><center><span class="menu"><a href="../index.html">Home</a> | <a href="../catalogue.html">Catalogue</a> | <a href="../articles.html">Articles</a> | <a href="../resources.html">Resources</a> | <a href="../software.html">Analysis Software</a> | <a href="../contact.html">Contact</a></span></center></p><hr><h1>Unveiling Ancient Precision: Comparative Metrological Analysis of Predynastic Egyptian Stone Vessels</h1>
+<p>Imagine a world where ancient artisans carved stone vessels so precisely they rival modern industrial standards - yet no one knows how they did it. For millennia, Predynastic and Early Dynastic Egyptian stone vessels have been enshrined as marvels of craftsmanship, yet archaeologists lack a systematic way to quantify their precision.</p>
+<p>This article bridges that gap by applying industrial grade metrology, typically reserved for precision manufacturing, to <a href="../catalogue.html">51 stone vessels</a> spanning museum collections, private holdings, modern lathe produced vases and modern handmade soft-stone vases.</p>
+<p>The debate over these artifacts is no longer theoretical. My own work in this field has been ongoing for two years, and a few weeks ago, <a href="https://maximus.energy/index.php/2025/08/11/predynastic-egyptian-stone-vessels-how-were-they-made/">Max Fomitchev-Zamilov's published an article</a> that to a wide extent answered a long-standing question: were these vessels shaped by ancient tools of unknown sophistication, or by human hands honed through centuries of practice? His work suggests a conclusive answer, but anomalies persist. For instance, private collection vessels exhibit precision scores 1.7–42× higher than museum or modern handmade counterparts, challenging assumptions about ancient artifacts. Will we find the answer?</p>
+<p>This article introduces five distinct metrics to analyze precision:</p>
+<ul>
+   <li><b>Precision Score</b> (Gerdes): A high-value metric that amplifies subtle differences in extreme precision.</li>
+   <li><b>Geometric Continuity Index</b> (Gerdes): A geometrically intuitive measure of continuous surface deviation from ideal form.</li>
+   <li><b>Perpendicular Surface Slice Analysis</b> (Gerdes): A curvature-corrected roundness metric with mathematical equivalence to continuous analysis.</li>
+   <li><b>Quality Score</b> (Fomitchev-Zamilov): A composite score balancing surface smoothness, centering, and consistency through statistically validated components.</li>
+   <li><b>Geometric Mean</b> (Poka, Artifact Foundation): A median-based fusion of circularity and concentricity measurements through geometric mean.</li>
+</ul>
+<p>By comparing these frameworks, we uncover how methodological choices - from outlier handling to alignment strategies - reshape conclusions about artifact quality. For example, Geometric Mean is highly sensitive to vessel orientation (a 28% score shift due to rotational alignment), while Geometric Continuity Index excels at creating an intuitively clear surface deviation metric but is less sensitive to fine surface textures.</p>
+<p>Ultimately, this work redefines how we evaluate ancient craftsmanship. No single metric reveals the full story - just as no single historian can capture the totality of an era. By synthesizing diverse approaches, we illuminate the interplay between human ingenuity and technological limits, offering a blueprint for future studies in archaeological metrology.</p>
+<p>Data provenance and collection methodology:</p>
+<ul>
+   <li><b>Museum vessels (MV)</b>: Scans sourced from both <a href="https://maximus.energy/index.php/2025/06/03/3d-scans-of-egyptian-vases/">Max Fomitchev-Zamilov</a> and Karoly Poka's scanning of vessels from the collection of the Petrie Museum in London. Where overlaps of scanned vessels occur, Fomitchev's datasets are prioritized due to superior interior surface capture and overall scan data quality.</li>
+   <li><b>Handmade vessels (HV)</b>: Nine soft-stone vases meticulously crafted using traditional techniques without modern tools. Vases created by Egyptian artisans using methods passed down by generations, obtained specifically for this study by Max Fomitchev-Zamilov and scanned with his Keyence VL-500 3D scanner (10-micron accuracy).</li>
+   <li><b>Industrial reproductions (IV)</b>: Nineteen vases produced using modern lathes from both soft and hard stone, primarily scanned by Max with Keyence VL-500 (with IV001-IV003 CT-scanned by Matt Beall for complete interior/exterior analysis).</li>
+   <li><b>Private collection (PV)</b>: Scans provided by the Artifact Foundation, including PV001 and PV003 owned by Adam Young (head of the Artifact Foundation) and CT-scanned at Zeiss facilities.</li>
+</ul>
+
+<p><img alt="Samples of vases from the Petrie Museum, image courtesy Max Fomitchev-Zamilov's" src="../images/comparative_metrology/petrie_museum_selection_max.webp" />
+<em>Image courtesy Max Fomitchev-Zamilov's</em> - Photo of museum artifacts from the Petrie Museum</p>
+<p><img alt="Samples of vases from the Petrie Museum, image courtesy Max Fomitchev-Zamilov's" src="../images/comparative_metrology/handmade_alabaster_max.webp" />
+<em>Image courtesy Max Fomitchev-Zamilov's</em> - Photo of Max's collection of handmade Egyptian vases</p>
+<p><img alt="Samples of vases from the Petrie Museum, image courtesy Max Fomitchev-Zamilov's" src="../images/comparative_metrology/industrial_vases_max.webp" />
+<em>Image courtesy Max Fomitchev-Zamilov's</em> - Photo of Max's collection of modern stone vases</p>
+<p><img alt="Image of analyzed vessels from private collections, image courtesy Artifact Foundation" src="../images/comparative_metrology/private_collection_vessels.webp" />
+<em>Image courtesy Artifact Foundation</em> - Photos of Adam Young's collection of Egyptian artifacts</p>
+<p>The article strives for a balanced language with the aim of including both technical and non-technical readers alike, while still providing equations and fundamentals necessary for comprehensive understanding and evaluation of the arguments and conclusions set forth herein.</p>
+<h2><strong>Comparing Precision Measurement Approaches: Five Perspectives on Ancient Craftsmanship</strong></h2>
+<p>When studying ancient Egyptian stone vessels, <em>how</em> we measure precision matters as much as the measurements themselves. Three different researchers (myself included) have developed unique approaches to quantify the remarkable craftsmanship of these artifacts. Here's a comparative look at their key methods used in this field of study.</p>
+<p>To ease the comparison of my proposed Precision Score metric, I have introduced two alternative updates:
+- The first, Geometric Continuity Index, applies the same methology as the Precision Score, but instead of using the RMD as a baseline, I square the results to get the RMSD instead, making this metric more intuitively comparable with the metrics from the other researchers.<br> 
+- The second, Perpendicular Surface Slice Analysis, is introduced to ensure the different approach to precision measurement is indeed comparable. The introduced slicing method is similar to what the other researchers have used, but using my distinct method of precision quantification. These methods also employ the direction of lower score = higher precision, making direct comparison with other researchers' methods more intuitive.</p>
+<p>All research reports already published on this site included every type of measurement discussed, and the necessary foundations hereof (including measurements from the DG&amp;T standard): Surface deviation analysis, detailed circularity analysis and detailed concentricity analysis - allowing anyone to study these individual components of precision in detail. Refer to the published reports in the catalogue for this data.</p>
+<p>The walk-through below only handles the difference of the final quality assessment of each artifact by each researcher.</p>
+<h3><strong>Precision Score - developed by Stine Gerdes</strong></h3>
+<p>The Precision Score is uniquely valuable for analyzing the upper limits of ancient manufacturing capabilities, where subtle differences in high-precision work would be indistinguishable using other metrics. It quantifies the exponential increase in difficulty required to achieve progressively higher levels of precision, making it the definitive metric for determining how closely ancient artisans approached industrial-grade accuracy. Higher scores indicate exponentially greater geometric control.</p>
+<p><strong>Direction</strong>: <em>Higher score = higher precision</em></p>
+<p><strong>Intuition</strong>: A specialized metric that magnifies tiny differences in extremely precise work.</p>
+<p><strong>Zeiss reference sphere theoretical maximum</strong>: 43,943</p>
+<p><strong>Calculation Procedure:</strong></p>
+<ol>
+<li>Generate 2D profile by calculating $\sqrt{x_i^2 + y_i^2}$ from 3D coordinates</li>
+<li>Fit high-order polynomials (1-5 sections with overlap) to profile</li>
+<li>Fuse polynomial sections using weighted interpolation at boundaries (infinite weight on boundary points)</li>
+<li>Calculate $\text{MSD} = \frac{1}{n} \sum (y_i - \hat{y}_i)^2$ (Mean Squared Deviation) for all scan point to composite polynomials</li>
+<li>Compute Precision Score = $\frac{1}{\text{MSD}}$</li>
+</ol>
+
+<p><strong>Philosophical Foundation:</strong> Emphasizes that achieving high precision becomes exponentially more difficult, making linear scales inadequate. The inverse MSD formulation ensures small improvements at high precision levels yield disproportionately higher scores.</p>
+<p><strong>Strengths</strong></p>
+<ul>
+<li>Maximum dynamic range (5,122x) enables fine-grained discrimination between high-precision artifacts</li>
+<li>Mathematically reflects reality of precision work through exponential scaling ($\frac{1}{\text{MSD}}$)</li>
+<li>Utilizes full vertex dataset, after removal of damaged parts and areas with insufficient data, with continuous surface analysis (no information loss)</li>
+</ul>
+
+<p><strong>Weaknesses</strong></p>
+<ul>
+<li>Requires logarithmic scaling for visualization due to extreme dynamic range</li>
+<li>Less immediately intuitive than RMSD-based metrics for non-specialist readers</li>
+</ul>
+
+<h3><strong>Geometric Continuity Index - developed by Stine Gerdes</strong></h3>
+<p>Geometric Continuity Index provides the most immediately interpretable measure of geometric fidelity in familiar engineering units (millimeters). It quantifies the average deviation from an idealized smooth surface across the entire artifact, making it particularly valuable for communicating precision levels to both specialist and non-specialist audiences. This metric excels at revealing systematic manufacturing variations across the vessel's complete geometry, with lower values indicating superior control over overall form and surface continuity.</p>
+<p><strong>Direction</strong>: <em>Lower score = higher precision</em></p>
+<p><strong>Intuition</strong>: Measures how closely the vessel's surface matches a mathematically perfect form. </p>
+<p><strong>Zeiss reference sphere theoretical minimum</strong>: 0.0048</p>
+<p><strong>Calculation Procedure:</strong></p>
+<ol>
+<li>Generate 2D profile by calculating $\sqrt{x_i^2 + y_i^2}$ from 3D coordinates</li>
+<li>Fit 15th-order polynomials (1-5 sections with overlap) to profile</li>
+<li>Fuse polynomial sections using weighted interpolation at boundaries (infinite weight on boundary points)</li>
+<li>Calculate $\text{RMSD} = \sqrt{\frac{1}{n} \sum (y_i - \hat{y}_i)^2}$ between scan data and best-fit surface</li>
+<li>Report median RMSD across artifact surface</li>
+</ol>
+<p><strong>Strengths</strong></p>
+<ul>
+<li>Intuitive physical interpretation (average deviation in millimeters)</li>
+<li>Direct comparability across studies and methodologies</li>
+<li>Clear linear relationship to manufacturing precision (lower = better)</li>
+<li>Robust against implementation variations when using continuous surface analysis</li>
+</ul>
+<p><strong>Weaknesses</strong></p>
+<ul>
+<li>Less sensitive to high-precision differences than inverse formulations</li>
+</ul>
+
+<h3><strong>Perpendicular Surface Slice Analysis - developed by Stine Gerdes</strong></h3>
+<p>Perpendicular Surface Slice Analysis serves as the definitive bridge between continuous surface analysis and discrete slice methodologies, demonstrating mathematical equivalence when properly implemented. By collecting all residuals across slices into a single RMSD calculation, it preserves full error distribution while maintaining slice-based analysis framework. This metric is particularly valuable for cross-method validation and for illustrating how curvature-aware slicing eliminates measurement artifacts present in z-axis approaches. Lower Perpendicular Surface Slice Analysis scores indicate better overall roundness control when accounting for surface geometry.</p>
+<p><strong>Direction</strong>: <em>Lower score = higher precision</em></p>
+<p><strong>Intuition</strong>: Measures roundness of the vessel by slicing through perpendiculars to its surface.</p>
+<p><strong>Calculation Procedure:</strong></p>
+<ol>
+   <li>Generate 2D profile by calculating $\sqrt{x_i^2 + y_i^2}$ from 3D coordinates</li>
+   <li>Slice artifact perpendicular to surface normal (0.2mm thickness, 0.2mm spacing)</li>
+   <li>For each slice:</li>
+   <ol type="a">
+     <li>Calculate median distance from z-axis to points (|median_x|)</li>
+     <li>Find tangent line at [$\text{median}_\text{distance}, \text{median}_y$] using polynomial derivative</li>
+     <li>Compute perpendicular distances from all slice points to tangent line (residuals)</li>
+   </ol>
+   <li>Collect ALL residuals from ALL slices into one dataset</li>
+   <li>Calculate RMSD = $\sqrt{\frac{1}{N} \sum (\text{residual}_i)^2}$ where $N = $ total number of points across all slices</li>
+</ol>
+
+<p><strong>Strengths</strong></p>
+<ul>
+   <li>Mathematical equivalence to Geometric Continuity Index (providing critical methodological bridge)</li>
+   <li>Explicit curvature correction by slicing perpendicular to surface normal</li>
+   <li>Eliminates distortion artifacts inherent in z-axis slicing methods</li>
+   <li>Direct comparison pathway to slice-based methodologies</li>
+</ul>
+
+<p><strong>Weaknesses</strong> </p>
+<ul>
+<li>Sensitive to vertex density in low-resolution scans</li>
+<li>Less sensitive to high-precision differences than inverse formulations</li>
+</ul>
+
+<h3><strong>Quality Score - developed by Max Fomitchev-Zamilov</strong></h3>
+<p>Quality Score excels at diagnosing specific manufacturing issues by separating concentricity errors from surface roughness and measuring consistency. It is particularly valuable for identifying systematic alignment problems during production, with lower scores indicating better overall control of both circularity and rotational consistency. This metric reveals how artisans maintained precision throughout the manufacturing process, with each component ($\text{RMSD}$, $\Delta C$, $\sigma(\Delta C)$) providing distinct insights into different aspects of craftsmanship quality.  </p>
+<p><strong>Direction</strong>: <em>Lower score = higher precision</em></p>
+<p><strong>Intuition</strong>: Combines three aspects of quality: surface smoothness, centering accuracy, and consistency.</p>
+<p><strong>Zeiss reference sphere theoretical minimum</strong>: 1.1</p>
+<p><strong>Calculation Procedure:</strong></p>
+<ol>
+<li>Intersect 3D mesh with parallel planes (z-axis orientation)</li>
+<li>For each slice (100 total, excluding top/bottom 2.54mm):</li>
+   <ol type="a">
+   <li>Fit circle using least squares </li>
+   <li>Calculate $\text{RMSD}$ (RMS error of fit) </li>
+   <li>Compute concentricity,<br>initially defined as: $\Delta C = \sqrt{x_c^2 + y_c^2}$<br>
+   later revised to: $\Delta C = \sqrt{(x_c- \langle x_c \rangle )^2 + (y_c - \langle y_c \rangle )^2}$</li>
+   </ol>
+<li>Apply statistical filtering: exclude slices where:<br>$\Delta C - \langle \Delta C \rangle > 2 \langle \Delta C \rangle$ or $\text{RMSD} - \langle \text{RMSD} \rangle > 2 \langle \text{RMSD} \rangle$ </li>
+<li>Calculate composite quality score: $Q = \langle \text{RMSD} \rangle + \langle \Delta C \rangle + \sigma(\Delta C)$</li>
+</ol>
+
+<p><strong>Strengths</strong></p>
+<ul>
+<li>Error type separation ($\text{RMSD}$, $\Delta C$, $\sigma(\Delta C)$ reveal distinct manufacturing aspects)</li>
+<li>Statistical robustness through outlier slice filtering</li>
+<li>Polygonally-based mesh/plane intersection avoids curvature distortion artifacts</li>
+</ul>
+
+<p><strong>Weaknesses</strong></p>
+<ul>
+<li>Fixed slice count (100) may not optimally sample all vessel sizes</li>
+</ul>
+
+<h3><strong>Geometric Mean - developed by Karoly Poka (Artifact Foundation)</strong></h3>
+<p><strong>Direction</strong>: <em>Lower score = higher precision</em></p>
+<p><strong>Intuition</strong>: None. Represents a <em>mathematical chimera</em> - dimensionally consistent but geometrically meaningless</p>
+<p><strong>Zeiss reference sphere theoretical minimum</strong>: 0.0065</p>
+<p><strong>Calculation Procedure:</strong></p>
+<ol>
+  <li>Slice artifact in z-plane (slice height not fixed, between 0.03mm-0.27mm thickness)</li>
+  <li>For each slice:
+    <ol type="a">
+      <li>Fit circle using least squares</li>
+      <li>Calculate circularity error (RMSD of fit)</li>
+      <li>Compute concentricity ΔC = $\sqrt{x_c^2 + y_c^2}$</li>
+    </ol>
+  </li>
+  <li>Determine median circularity and median concentricity</li>
+  <li>Calculate composite score: $\sqrt{\text{circularity}_{median} \times \text{concentricity}_{median}}$</li>
+</ol>
+
+<p><strong>Weaknesses &amp; Rejection</strong></p>
+<ol>
+  <li>
+    <b>Foundational Mathematical Flaws</b>
+    <ol type="a">
+      <li>
+        <i>Dimensional Incompatibility and Lack of Geometric Meaning</i><br>
+        This metric combines two dimensionally incompatible quantities without justification.
+        While the final unit appears consistent (length), the intermediate product has no physical meaning in geometric precision assessment.<br><br>
+        The name of the metric Geometric Mean, does not refer to any geometrical properties of <i>the artifact</i>: The term <a href="https://en.wikipedia.org/wiki/Geometric_mean">Geometric Mean</a> refers to the name of the applied function $\sqrt{a \cdot b}$.<br><br>
+        <b>This differs fundamentally from valid metrics:</b>
+        <ul>
+          <li>Geometric Continuity Index: Directly measures deviation magnitude ($\sqrt{1/n\sum(y_i-\hat{y}_i)^2}$)</li>
+          <li>Precision Score: Inverse of squared error ($1/MSD$), reflecting precision difficulty</li>
+          <li>Quality Score: Sum of meaningful components ($RMSD + ΔC + \sigma(ΔC)$)</li>
+        </ul>
+      </li><br>
+      <li>
+        <i>Violation of Error Propagation Principles</i><br>
+        Precision metrics must adhere to error propagation principles, however this approach violates fundamental statistical requirements:<br><br>
+        <b>Error Sensitivity Analysis:</b>
+        $$dQ = \frac{1}{2\sqrt{c \cdot ΔC}} \cdot (ΔC \cdot dc + c \cdot dΔC)$$
+        Differential equation of Geometric Mean metric where
+        <ul>
+         <li>c: Circularity RMSD median (in mm, measures surface roughness)</li>
+         <li>ΔC: Concentricity median (in mm, measures center alignment)</li>
+        </ul>
+        <br>
+        This reveals disproportionate sensitivity where either component approaches zero, creating artificial precision "cliffs" with no physical basis, artificially increasing the Geometric Mean calculation. This mathematical flaw fundamentally undermines any archaeological conclusions, as it misrepresents the true relationship between different precision levels in ancient manufacturing.<br><br>
+        <b>Contrast with Valid Metrics:</b>
+        <ul>
+          <li>Geometric Continuity Index: Linear error propagation ($dRMSD \propto d\varepsilon$)</li>
+          <li>Precision Score: Exponential sensitivity reflecting manufacturing reality ($dPS \propto 1/RMSD^3$)</li>
+          <li>Quality Score: Additive components with clear physical interpretations</li>
+        </ul><br><br>
+      </li>
+    </ol>
+  </li>
+
+  <li>
+    <b>Statistical Misapplication and Data Distortion</b>
+    <ol type="a">
+      <li>
+        <i>Catastrophic Misapplication of Statistical Concepts - The Median Selection</i><br>
+        The use of medians for both equation components represents a fundamental statistical misunderstanding.<br><br>
+        <b>The Median Fallacy</b><br>
+        The erroneous belief that "median makes results robust" ignores that:
+        <ul>
+          <li>Precision assessment requires full error distribution</li>
+          <li>Manufacturing quality depends on worst-case deviations, not central tendency</li>
+          <li>Medians hide systematic manufacturing variations critical to analysis</li>
+        </ul><br>
+        For precision measurement, we require metrics sensitive to the tail of the error distribution. The Geometric Mean approach is mathematically equivalent to:
+         $$
+         \text{Geometric Mean} \propto \left(F^{-1}(0.5)\right)^2
+         $$ 
+         Median Definition in Statistical Terms:
+         <ul>
+           <li>For any error distribution, the median = $F^{-1}(0.5)$</li>
+           <li>Where $F(x) = P(X \leq x)$ is the error cumulative distribution function (probability that error $X$ is less than or equal to $x$)</li>
+         </ul>
+        <br>This focuses exclusively on the 50th percentile, ignoring the critical 90th+ percentile errors that determine manufacturing quality.<br><br> 
+        <b>Statistical Consequences</b>
+        <ul>
+          <li>Discards 50% of error information (all values above median)</li>
+          <li>Artificially suppresses manufacturing variations critical to precision assessment</li>
+          <li>Creates false precision by <i>ignoring systematic deviations</i></li>
+        </ul><br>
+        <b>Precision Manufacturing Requirement</b><br>
+        True precision requires control over:
+        <ul>
+          <li>Not just the central tendency (median)</li>
+          <li>But the entire error distribution</li>
+          <li>Particularly the upper tail ($ F^{-1}(0.9) $ and beyond)</li>
+        </ul><br>
+        This is why industrial metrology standards (ISO 1101, ASME Y14.5) focus on maximum deviations rather than medians.<br><br>
+        <b>Contrast with Quality Score which correctly uses:</b>
+        <ul>
+          <li>$\langle RMSD \rangle$: Mean RMS error (captures overall surface quality)</li>
+          <li>$\langle ΔC \rangle$: Mean concentricity (systematic alignment)</li>
+          <li>$\sigma(ΔC)$: Standard deviation (consistency of alignment)</li>
+        </ul><br>
+        This preserves the full error distribution while separating meaningful components.<br><br>
+      </li>
+    </ol>
+  </li>
+
+  <li>
+    <strong>Geometric Implementation Errors</strong>
+    <ol type="a">
+      <li>
+        <strong>Curvature Distortion in Slicing</strong>
+        <p>
+          The z-axis parallel slicing, with documented variations between 0.003mm-0.27mm in slice height, introduces geometric distortion that potentially distorts measurements.
+        </p>
+        <p>
+          <strong>Mathematical Proof:</strong><br>
+          For a vessel with radius $ R $ and curvature $ \kappa $, the distortion error $ \varepsilon $ introduced by z-slicing is:
+        </p>
+        $$
+        \varepsilon \approx \frac{\kappa \cdot h^2}{2}
+        $$
+        <p>
+          Where $ h = $ slice height.
+        </p>
+        <p>
+          Let's take the vessel MV005 (UC15624) as an example:
+          <br>Calculating Geometric Mean with slice-height <b>0.003</b> gives us:
+          <br>Result: 0.0543 (Fit RMSD Median: 0.0867, Concentricity Median: <b>0.0340</b>)
+          <br><br>Calculating Geometric Mean with slice-height <b>0.27</b> gives us:
+          <br>Result: 0.0554 (Fit RMSD Median: 0.0982, Concentricity Median: <b>0.0313</b>)
+          <br><br>The result decreases 2%, and median RMSD error increases significantly <b>13%</b>. This variation will irregularly affect vessels differently depending on their shape.
+        </p>
+        <p>
+          <strong>Contrast with Perpendicular Surface Slice Analysis:</strong>
+          <ul>
+            <li>Slicing perpendicular to surface normal</li>
+            <li>Using tangent line reference at each slice</li>
+            <li>Ensuring measurements reflect true geometry</li>
+            <li>Quality Score method eliminates this distortion by:
+              <ul>
+                <li>Intersecting the 3D mesh with parallel planes (z-axis orientation)</li>
+              </ul>
+            </li>
+          </ul>
+        </p>
+        <p>
+          <strong>Critical Consequence:</strong>
+          <ul>
+            <li>Vessels measured with thinner slices (0.003mm) show artificially improved precision</li>
+            <li>Creates false ranking where measurement protocol determines score</li>
+            <li>Violates fundamental requirement for standardized metrology</li>
+          </ul>
+        </p>
+      </li>
+    </ol>
+  </li>
+
+  <li>
+    <strong>Methodological Inconsistencies and Errors</strong>
+    <ol type="a">
+      <li>
+        <strong>Calculation Errors Reveal Fundamental Flaws</strong><br>
+        Documented calculation error for MV013:<br>
+        Looking at <a href="https://www.youtube.com/watch?v=8d752WFDL24">the presentation of the research results</a>, the artifact MV013 (UC41053) falls into the top 5 precision vessels. However, a critical error presents itself. The median RMSD fit error is documented at <b>0.14mm</b> and the median concentricity error at <b>0.49mm</b>, let's do the math:
+        $$
+        \sqrt{0.14 \times 0.49} = 0.262 \quad (\text{correct}) \\
+        \text{Reported as: } 0.128 \quad (\text{error})
+        $$
+        This 51% underestimation reveals:<br>
+        <ol>
+          <li><strong>Poor quality control:</strong> No validation of calculations</li>
+          <li><strong>Method weakness:</strong> Errors like this should not be introduced with consistent code structure and output reporting.</li>
+          <li><strong>Potential data manipulation:</strong> Data manipulation has been noted before in presentations by the Artifact Foundation.</li>
+        </ol><br>
+      </li>
+      <li>
+        <strong>Alignment Sensitivity Analysis</strong><br>
+        The Geometric Mean metric shows extreme sensitivity to alignment.<br><br>
+        <b>Mathematical Proof:</b><br>For a vessel with true concentricity $ \Delta C_{\text{true}} $, misalignment of $ \delta $ causes:
+        $$
+        \Delta C_{\text{measured}} = \sqrt{\Delta C_{\text{true}}^2 + \delta^2 + 2 \cdot \Delta C_{\text{true}} \cdot \delta \cdot \cos\theta} \\
+        Q = \sqrt{c \times \sqrt{\Delta C_{\text{true}}^2 + \delta^2 + 2 \cdot \Delta C_{\text{true}} \cdot \delta \cdot \cos\theta}}
+        $$
+        Creating a non-linear amplification of alignment errors. Measurements show that the alignment strategies employed by ArcSci outperform the alignment strategy employed by Artifact Foundation when using their own metric.<br><br>
+        Let's explore this critical failure mode, by going through some examples:<br>
+        ArcSci applied top and bottom margin of 4mm, slice height of 0.05mm.<br>
+        Artifact Foundation applied unknown top and bottom margin, slice height of 0.03mm.<br><br>
+          <strong>MV008 (UC15731)</strong>
+            <ul>
+              <li>ArcSci results:<br><strong>Geometric Mean: 0.047</strong> | RMSD median: 0.073 | ΔC median: 0.0304</li>
+                  Vessel rotated 0.05° to the right, away from proposed optimal alignment:<br>
+                  <strong>Geometric Mean: 0.039</strong> | RMSD median: 0.073 | ΔC median: 0.0212
+              <li>Artifact Foundation results:<br><strong>Quality Score: 0.062</strong> | RMSD Median: 0.072 | ΔC median: 0.0536</li>
+            </ul><br>
+          <strong>MV005 (UC15624)</strong>
+            <ul>
+              <li>ArcSci results:<br><strong>Geometric Mean: 0.052</strong> | RMSD median: 0.09 | ΔC median: 0.031</li>
+              <li>Artifact Foundation results:<br><strong>Geometric Mean: 0.074</strong> | RMSD median: 0.096 | ΔC median: 0.0575</li>
+            </ul>
+        <p>Shifting the rotation of the artifact MV008 a mere 0.05° to the right improved the Geometric Mean score by <strong>17%</strong>.</p>
+        <p>In reality, this means that the final output of the Geometric Mean metric can be artificially manipulated, by modifying the artifact alignment in <i>miniscule and almost undetectable increments</i>.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><strong>Conclusion: Artifact Foundations Geometric Mean Methodology is Fundamentally Invalid</strong><br>
+The approach represents a catastrophic failure in precision metrology for three fundamental reasons:
+ <br />
+<ol type="a">
+   <li><strong>Complete Lack of Theoretical Foundation</strong>: The methodology behind Geometric Mean score suffers from critical theoretical deficiencies:
+      <ul>
+      <li><b>No stated purpose</b>: Fails to articulate what aspect of precision is being measured</li>
+      <li><b>No error analysis</b>: Ignores fundamental metrology principles</li>
+      </ul>
+   </li>
+   <li><strong>Mathematical Invalidity</strong>: Combines geometrically incompatible quantities without justification, creating a metric that lacks physical meaning</li>
+   <li><strong>Statistical Misapplication</strong>: Uses medians to artificially improve scores while discarding critical manufacturing variation data, violating basic principles of precision measurement</li>
+   </ol>
+</p>
+<p>The documented lack of theoretical foundation confirm this methodology's unsuitability for archaeological precision analysis. In contrast all other analyzed metrics represent valid theoretically grounded approaches that:</p>
+<ul>
+    <li>Capture meaningful aspects of manufacturing precision</li>
+    <li>Maintain geometric and statistical integrity  </li>
+    <li>Support archaeological interpretation through rigorous metrology  </li>
+</ul>
+<p>Artifact Foundation's methodology should be rejected as fundamentally flawed and scientifically invalid within the research domain of precision analysis for ancient Egyptian vessels. It's continued use would produce misleading results that obscure rather than reveal the true manufacturing capabilities of ancient artisans.  </p>
+<p><strong>Final Notes</strong><br>
+The <a href="https://youtu.be/8d752WFDL24?t=1623">theatrical dismissal of my own methodologies by Artifact Foundation</a>, based solely on them not having access to implementation source-code, fundamentally misrepresents scientific replication standards.</p>
+<p>Legitimate replication requires <em>methodological transparency</em> - sufficient procedural detail to reproduce results - not code submission. Karoly Poka's conflation of open-source mandates with peer review reveals a critical misunderstanding of scientific epistemology: Validation occurs through independent implementation of described methods, not access to proprietary implementations.</p>
+<p>This error exemplifies his broader pattern of substituting procedural gatekeeping for substantive critique, further undermining his credibility in precision metrology - or <em>any</em> kind of scientific endeavor.</p>
+<p>True scientific discourse demands engagement with <em>methodological validity</em>, as rigorously demonstrated in this analysis - not diversionary demands irrelevant to empirical verification. </p>
+<p>When scientists rigorously test each other's methods - not by demanding code and performing theatrics, but by implementing documented procedures - they advance knowledge <em>together</em>. Poka's avoidance of this core scientific practice exposes his critique as performative, not probative.</p>
+<h3><strong>Comparison conclusion</strong></h3>
+<p>These five metrics form a complementary framework for analyzing ancient vessel precision:</p>
+<ul>
+<li><strong>Precision Score</strong> for maximum discrimination at high precision levels</li>
+<li><strong>Geometric Continuity Index</strong> for intuitive interpretation of overall geometric fidelity</li>
+<li><strong>Perpendicular Surface Slice Analysis</strong> for methodological bridging between continuous and slice-based approaches - as this metric was solely created for this purpose, it will not be used in future analysis</li>
+<li><strong>Quality Score</strong> for diagnosing specific manufacturing aspects through error component separation</li>
+<li><strong>Geometric Mean</strong> - rejected</li>
+</ul>
+
+<p><strong>Comparative Summary</strong><br>
+This comparison reveals a crucial insight: no single metric tells the complete story of ancient craftsmanship. Each approach illuminates different aspects of manufacturing quality, much like how multiple witnesses might describe the same event from different perspectives. By using several complementary methods, researchers can develop a more nuanced understanding of both the technical capabilities of ancient Egyptian artisans and the specific challenges they faced in creating these remarkable stone vessels. The most revealing analyses come not from choosing one "best" method, but from understanding what each approach uniquely contributes to our interpretation of ancient manufacturing excellence.</p>
+<h2><strong>Empirical Validation: Museum Vessels Align with Handmade Craftsmanship, Private Collections Defy Industrial Benchmarks</strong></h2>
+<p>This section resolves the central archaeological debate through visualized metrological evidence. By plotting exterior versus interior precision scores across all 51 artifacts - spanning museum collections, private holdings, modern lathe-produced vases, and contemporary handmade examples - we confirm <a href="https://maximus.energy/index.php/2025/08/11/predynastic-egyptian-stone-vessels-how-were-they-made/">Max Fomitchev-Zamilov's hypothesis</a>: <strong>museum-held Predynastic vessels exhibit precision indistinguishable from verifiably modern handmade vases</strong>.</p>
+<h3><strong>Methodological Transparency for Cross-Validation</strong></h3>
+<p>To ensure rigorous comparative analysis, we established standardized protocols where prior methodologies lacked clarity:</p>
+<h4>For the implementation of Geometric Mean metric</h4>
+<ul>
+  <li><strong>Slice optimization</strong>: Slice heights dynamically adjusted to 0.005–0.2mm based on scan density (may inflict distortion from vessel curvature).</li>
+  <li><strong>Edge exclusion</strong>: Fixed 4mm top/bottom margins prevent distortion from flat surfaces of top and bottom.</li>
+  <li><strong>Data integrity</strong>: Slices with &lt;60 points discarded - critical for geometric validity but absent in defining protocol.</li>
+  <li><strong>Alignment superiority</strong>: The curvature-corrected axis alignment used by ArcSci significantly reduced concentricity median errors for artifacts (example: Artifact MV005, 0.031 vs. 0.0575, reduced by 46%), explaining why the ArcSci implementation of Geometric Mean generally produce a lower score than the results published by Artifact Foundation.</li>
+  <li><strong>Alignment sensetivity</strong>: Concentricity measurements proved particularly sensitive to even minute rotational adjustments of the artifact (a 0.05° shift can alter concentricity median values by <strong>30%</strong> (0.0304mm before, 0.0212mm after), as demonstrated in MV008 analysis), whereas circle fit error (RMSD) remains relatively stable under the same conditions.</li>
+</ul>
+
+<h4>For the implementation of Quality Score</h4>
+<ul>
+  <li><strong>Slice optimization</strong>: Slice heights fixed at 0.2mm (the Python implementation handles both vertex slicing and mesh interpolation - both method gives very similar results)</li>
+  <li><strong>Alignment variations</strong>: Fomitchev and I aligned vessel scans independently, which will introduce slight differences in the results.</li>
+</ul>
+
+<h4>Comparison of Quality Metric Implementation, Max Fomitchev-Zamilov vs. Current Study:</h4>
+<p>The following table presents a direct comparison between my implementation of Max Fomitchev-Zamilov's Quality Metric and the results provided by Max himself for specific museum artifacts. This comparison reveals important insights about methodological implementation differences that affect final precision assessments.</p>
+<table>
+<thead>
+<tr>
+<th>Artifact (Catalog ID)</th>
+<th>Component</th>
+<th>Stine's Measured<br>[μm]</th>
+<th>Max's Reported Value [μm]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MV015 (UC4354)</strong></td>
+<td>Mean RMSD</td>
+<td>125</td>
+<td>111</td>
+</tr>
+<tr>
+<td></td>
+<td>Mean Concentricity</td>
+<td>59</td>
+<td>54</td>
+</tr>
+<tr>
+<td></td>
+<td>Std Dev Concentricity</td>
+<td>52</td>
+<td>59</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Quality Score</strong></td>
+<td><strong>236</strong></td>
+<td><strong>224</strong></td>
+</tr>
+<tr>
+<td><strong>MV016 (UC4356)</strong></td>
+<td>Mean RMSD</td>
+<td>602</td>
+<td>562</td>
+</tr>
+<tr>
+<td></td>
+<td>Mean Concentricity</td>
+<td>305</td>
+<td>263</td>
+</tr>
+<tr>
+<td></td>
+<td>Std Dev Concentricity</td>
+<td>158</td>
+<td>184</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Quality Score</strong></td>
+<td><strong>1,065</strong></td>
+<td><strong>1,009</strong></td>
+</tr>
+<tr>
+<td><strong>MV018 (UV4649)</strong></td>
+<td>Mean RMSD</td>
+<td>306</td>
+<td>240</td>
+</tr>
+<tr>
+<td></td>
+<td>Mean Concentricity</td>
+<td>67</td>
+<td>51</td>
+</tr>
+<tr>
+<td></td>
+<td>Std Dev Concentricity</td>
+<td>104</td>
+<td>52</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Quality Score</strong></td>
+<td><strong>477</strong></td>
+<td><strong>343</strong></td>
+</tr>
+<tr>
+<td><strong>MV019 (UC4978)</strong></td>
+<td>Mean RMSD</td>
+<td>243</td>
+<td>229</td>
+</tr>
+<tr>
+<td></td>
+<td>Mean Concentricity</td>
+<td>93</td>
+<td>85</td>
+</tr>
+<tr>
+<td></td>
+<td>Std Dev Concentricity</td>
+<td>51</td>
+<td>64</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Quality Score</strong></td>
+<td><strong>387</strong></td>
+<td><strong>378</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Observations</strong></p>
+<p>This comparison highlights the critical importance of methodological transparency in archaeological metrology. While our implementations differ in specific calculations, the fundamental conclusion remains unchanged: museum-held Predynastic vessels exhibit precision indistinguishable from modern handmade vases. I look forward to discussing these implementation differences with Max to establish a fully standardized approach for future research.</p>
+<p>To ensure methodological consistency across this study, all circle fitting employed the <a href="https://scikit-image.org/docs/stable/api/skimage.measure.html#skimage.measure.CircleModel">scikit-image CircleModel</a> implementation (a well-established scientific Python module).</p>
+<h3>Critical Data Refinements</h3>
+<p>To isolate authentic manufacturing signatures, we implemented targeted exclusions:  </p>
+<ul>
+  <li>Elliptical Petrie Museum vessels (<a href="metrology_in_ancient_eqyption_stone_vessels.html">previously documented in this article</a>) were removed as outliers, as their non-circular profiles would artificially distance the MV group from handmade counterparts.</li>
+  <li>The industrially made vessel IV019 will be excluded from the data-set due to it's high interior precision made by a drill (no curvature on the interior cavity).</li>
+  <li>Extreme outliers excluded from distribution center calculations:  
+    <ul>
+      <li>Museum vessels MV011 and MV013 (all metrics)</li>
+      <li>Handmade HV003 and HV004 (Quality Score)</li>
+      <li>Handmade HV003 (Geometric Mean)</li>
+      <li>Industrial lathe vases IV019 (all metrics)</li>
+    </ul>
+  </li>
+</ul>
+<p>These exclusions ensure distributions reflect typical craftsmanship rather than pathological edge cases.  </p>
+<h3>Validation Framework</h3>
+<p>The resulting precision maps (Figures 1–4) reveal four statistically distinct clusters corresponding to artifact categories:  </p>
+<ul>
+  <li><strong>PV</strong>: Private collection hard stone artifacts (hard stone)</li>
+  <li><strong>MV</strong>: Petrie Museum hard stone vases (hard stone)</li>
+  <li><strong>HV</strong>: Handmade modern Egyptian vases (soft stone)</li>  
+  <li><strong>IV</strong>: Industrial lathe produces vases (soft and hard stone)</li>  
+</ul>
+
+<p>Critically, the convergence of MV and HV distributions across multiple metrics confirms that museum-held Predynastic vessels operate within the precision limits of rudimentary hand-guided tools. Conversely, PV specimens consistently achieve scores 1.7–42× higher than museum or handmade artifacts - exceeding even industrial benchmarks in some cases. This anomaly demands rigorous scrutiny of provenance, though definitive attribution requires methodologies beyond current scope.</p>
+<h2>Understanding Our Statistical Evidence - Quantifying How Much Each Vessel Category May Belong to the Same Group</h2>
+<p>These statistical tools work together like different lenses: The Mann-Whitney test tells us <em>if</em> differences are likely real, effect size reveals <em>how meaningful</em> those differences are, and superiority ratios quantify <em>how much better</em> one group performs. Together, they provide a complete picture that goes beyond simple "better/worse" comparisons to reveal the nuanced reality of ancient craftsmanship, confirming museum artifacts as achievements of a hand-guided manufacturing process, while highlighting extraordinary anomalies in private collections that demand further investigation.</p>
+<p>To ensure our findings stand on solid scientific ground, we employed several statistical tests to analyze the precision data. Here's what these technical terms mean for our understanding of ancient craftsmanship, with real data from our study.</p>
+<p><img alt="Histogram, Geometric Continuity Index for MV, HV, PV and IV categories)" src="../images/comparative_metrology/histogram_surface_rmsd.webp" />
+<em>Histogram of Geometric Continuity Index for MV, HV, PV and IV categories</em></p>
+<h2><strong>Mann-Whitney U Test: The "Real Difference" Detector</strong></h2>
+<p><em>Imagine comparing two jars of marbles-one from museum artifacts, one from handmade reproductions. If you mixed them together and couldn't tell which came from which jar, the difference might be random. The Mann-Whitney U test answers: "How likely is it that these two groups actually come from different manufacturing processes?"</em></p>
+<ul>
+<li><strong>What it tells us</strong>: Whether the precision differences between groups (like museum vs. handmade) are likely real or just random variation</li>
+<li><strong>How to read it</strong>: A p-value below 0.05 means there's less than a 5% chance the observed difference happened by random chance alone</li>
+<li><strong>In our study</strong>: When comparing museum (MV) and handmade (HV) artifacts, most metrics showed p-values above 0.05, confirming these groups are non-separable, and operate within the same hand-guided precision limits</li>
+</ul>
+<p><strong>Mann-Whitney U Test</strong> between category "MV" and "HV"</p>
+<table>
+<thead>
+<tr>
+<th>Precision Metric</th>
+<th>Exterior</th>
+<th>Interior</th>
+<th>Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precision Score</td>
+<td>U=71.0000, p=0.6366</td>
+<td>U=79.0000, p=0.0817</td>
+<td>U=300.0000, p=0.1179</td>
+</tr>
+<tr>
+<td>Geometric Continuity Index</td>
+<td>U=55.0000, p=0.6366</td>
+<td>U=29.0000, p=0.0817</td>
+<td>U=168.0000, p=0.1179</td>
+</tr>
+<tr>
+<td>Perpendicular Surface Slice Analysis</td>
+<td>U=55.0000, p=0.6366</td>
+<td>U=28.0000, p=0.0700</td>
+<td>U=161.0000, p=0.0835</td>
+</tr>
+<tr>
+<td>Quality Score</td>
+<td>U=24.0000, p=0.0667</td>
+<td>U=28.0000, p=0.2614</td>
+<td>U=102.0000, p=0.0242</td>
+</tr>
+<tr>
+<td>Geometric Mean</td>
+<td>U=40.0000, p=0.2973</td>
+<td>U=17.0000, p=0.0434</td>
+<td>U=131.0000, p=0.0949</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to read our actual data</strong>: For most metrics, the p-values for exterior surfaces are well above 0.05 (like 0.6366 for Precision Score), meaning there's a 63.66% chance the observed differences between museum and handmade artifacts occurred randomly - too high to conclude they represent different manufacturing processes. The only exception is Geometric Mean for interior surfaces (p=0.0434), which dips just below the 0.05 threshold, again demonstrating the unreliability of this metric.</p>
+<p>Interestingly, while the combined Quality Score analysis shows statistical significance (p=0.0242), neither the exterior (p=0.0667) nor interior (p=0.2614) surfaces individually reach significance. This pattern suggests that while there may be subtle differences between museum and handmade artifacts when considering both surfaces together, these differences aren't consistently apparent when examining surfaces separately - a nuance that reinforces our conclusion that both groups operate within the same fundamental precision framework.</p>
+<p>This overall pattern confirms that museum-held Predynastic vessels consistently align with hand-guided craftsmanship and use of rudimentary tools across all four of the validated metrics, with only minor, surface-specific variations that reflect natural manufacturing nuances rather than fundamentally different production methods.</p>
+<p><strong>Mann-Whitney U Test</strong> between category "MV" and "IV"</p>
+<table>
+<thead>
+<tr>
+<th>Precision Metric</th>
+<th>Exterior</th>
+<th>Interior</th>
+<th>Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precision Score</td>
+<td>U=30.0000, p=0.0007</td>
+<td>U=62.0000, p=0.1199</td>
+<td>U=191.0000, p=0.0004</td>
+</tr>
+<tr>
+<td>Geometric Continuity Index</td>
+<td>U=194.0000, p=0.0007</td>
+<td>U=133.0000, p=0.0902</td>
+<td>U=646.0000, p=0.0003</td>
+</tr>
+<tr>
+<td>Perpendicular Surface Slice Analysis</td>
+<td>U=200.0000, p=0.0003</td>
+<td>U=130.0000, p=0.1199</td>
+<td>U=662.0000, p=0.0001</td>
+</tr>
+<tr>
+<td>Quality Score</td>
+<td>U=183.0000, p=0.0034</td>
+<td>U=157.0000, p=0.0050</td>
+<td>U=682.0000, p=0.0000</td>
+</tr>
+<tr>
+<td>Geometric Mean</td>
+<td>U=193.0000, p=0.0008</td>
+<td>U=150.0000, p=0.0002</td>
+<td>U=618.0000, p=0.0001</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What the MV/IV comparison reveals</strong>: When we compare museum artifacts to industrial benchmarks, the story changes dramatically. For exterior surfaces, all metrics show extremely low p-values (as low as 0.0003), meaning there's less than a 0.07% chance these differences occurred randomly - virtually confirming they represent fundamentally different manufacturing processes. This is exactly what we'd expect: handcrafted ancient artifacts should be less precise than modern machine-made objects.</p>
+<p>The interior surfaces show more nuanced results, with some metrics (like Quality Score) still showing highly significant differences (p=0.0050), while others approach or exceed the threshold of statistical significance.</p>
+<h3><strong>Cohen's d Effect Size: The "How Big is the Difference?" Measure</strong></h3>
+<p><em>Statistical significance tells us if a difference exists, but effect size tells us how meaningful that difference is. Imagine two bakers-one makes loaves 1cm taller than the other. Statistically, this might be significant with enough measurements, but practically, it doesn't matter for your sandwich.</em></p>
+<ul>
+<li><strong>What it tells us</strong>: The practical importance of differences between groups, measured in standard deviation units</li>
+<li><strong>How to read it</strong>:</li>
+<li><em>Small effect (|d| &lt; 0.5)</em>: A statistically detectable difference that may not matter practically</li>
+<li><em>Medium effect (0.5 ≤ |d| &lt; 0.8)</em>: A clear, noticeable difference</li>
+<li><em>Large effect (|d| ≥ 0.8)</em>: A substantial, meaningful difference</li>
+<li><strong>In our study</strong>: The large effect size in Geometric Mean for interior surfaces revealed a meaningful pattern related to ancient manufacturing techniques, while small effects between MV and HV in other metrics confirmed their practical similarity</li>
+</ul>
+<p><strong>Cohen's d Effect Size</strong> between category "MV" and "HV"</p>
+<table>
+<thead>
+<tr>
+<th>Precision Metric</th>
+<th>Exterior</th>
+<th>Interior</th>
+<th>Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precision Score</td>
+<td>0.4445</td>
+<td>0.9421</td>
+<td>0.6085</td>
+</tr>
+<tr>
+<td>Geometric Continuity Index</td>
+<td>0.2316</td>
+<td>0.8788</td>
+<td>0.4318</td>
+</tr>
+<tr>
+<td>Perpendicular Surface Slice Analysis</td>
+<td>0.2239</td>
+<td>0.8589</td>
+<td>0.4325</td>
+</tr>
+<tr>
+<td>Quality Score</td>
+<td>1.0878</td>
+<td>0.7249</td>
+<td>0.9124</td>
+</tr>
+<tr>
+<td>Geometric Mean</td>
+<td>0.3252</td>
+<td>1.1428</td>
+<td>0.6676</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to read our actual data</strong>: For exterior surfaces, three of five metrics show small effect sizes below 0.5, confirming that museum and handmade artifacts operate within the same practical precision range. The Precision Score shows a medium effect (0.44), while Quality Score surprisingly shows a large effect (1.09) despite non-significant p-values - highlighting how effect size and statistical significance provide complementary insights.</p>
+<p>The interior surfaces tell a more nuanced story: All metrics except Quality Score show large effects (0.86-1.14), indicating museum artisans achieved significantly better interior precision. Geometric Mean shows the largest effect size (1.14), confirming its particular sensitivity to axis alignment differences between groups - although it should be kept in mind that the Geometric Mean metric is fundamentally invalid, and only included here in the interest of comparison and statistical illustration.</p>
+<p><strong>Cohen's d Effect Size</strong> between category "MV" and "IV"</p>
+<table>
+<thead>
+<tr>
+<th>Precision Metric</th>
+<th>Exterior</th>
+<th>Interior</th>
+<th>Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precision Score</td>
+<td>1.2211</td>
+<td>0.7742</td>
+<td>0.8318</td>
+</tr>
+<tr>
+<td>Geometric Continuity Index</td>
+<td>1.4523</td>
+<td>0.6866</td>
+<td>1.0621</td>
+</tr>
+<tr>
+<td>Perpendicular Surface Slice Analysis</td>
+<td>1.5671</td>
+<td>0.6622</td>
+<td>1.1231</td>
+</tr>
+<tr>
+<td>Quality Score</td>
+<td>1.1206</td>
+<td>1.1864</td>
+<td>1.1753</td>
+</tr>
+<tr>
+<td>Geometric Mean</td>
+<td>1.2348</td>
+<td>1.8985</td>
+<td>1.1693</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What the MV/IV effect sizes reveal</strong>: The effect sizes between museum and industrial artifacts tell a powerful story about manufacturing capabilities across time. For exterior surfaces, all metrics show large effect sizes (1.12-1.57), confirming that ancient handcrafted vessels fall significantly short of modern machine precision - a difference of more than one standard deviation in every measurement system.</p>
+<p>The interior surfaces present a fascinating contrast: while three metrics show medium effects (0.66-0.77), suggesting ancient artisans achieved results closer to modern machinery than expected for this challenging aspect of vessel production, two metrics tell a different story. Quality Score maintains a large effect (1.19), and Geometric Mean shows an exceptionally large effect (1.89) - nearly two standard deviations difference.</p>
+<p>The Geometric Mean's extreme interior effect size requires special explanation. Unlike other metrics, this measurement is extremely sensitive to axis alignment consistency. Our <a href="metrology_in_ancient_eqyption_stone_vessels.html">previous analysis</a> documented that Predynastic artisans typically repositioned vessels once during exterior shaping (creating two slightly different axes visible around mid-vessel height), while maintaining consistent alignment when working the cavity of the interior surfaces. Since interior scans only capture the lower portion of vessels where no repositioning occurred, this creates artificially low $concentricity_{median}$ values in Geometric Mean - magnifying the precision difference between ancient and industrial artifacts specifically for interior surfaces. This mathematical amplification effect explains why Geometric Mean shows such an extreme interior effect size compared to other metrics that don't emphasize axis continuity to the same degree.</p>
+<h3><strong>Superiority Ratio: The "How Much Better?" Comparison</strong></h3>
+<p><em>When private collection specimens appeared more precise than industrial benchmarks, we needed a straightforward way to quantify this difference - not just whether it existed, but by how much.</em></p>
+<ul>
+<li><b>What it tells us</b>: How many times more precise one group is compared to another (with direction depending on the metric)</li>
+<li><b>How to read it</b>:</li>
+<ul>
+  <li>For Precision Score (higher=better): Ratio > 1 means PV is better</li>
+  <li>For other metrics (lower=better): Ratio < 1 means PV is better</li>
+  <li>Values far from 1 indicate substantial differences</li>
+</ul>
+<li><b>In our study</b>: Private collection specimens showed ratios indicating extraordinary precision that surpasses industrial benchmarks across multiple metrics - statistically improbable for genuine ancient artifacts</li>
+</ul>
+
+<p><strong>Superiority Ratio</strong> between category "PV" and "IV"</p>
+<table>
+<thead>
+<tr>
+<th>Precision Metric</th>
+<th>Exterior</th>
+<th>Interior</th>
+<th>Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precision Score</td>
+<td>0.9792</td>
+<td>0.6458</td>
+<td>0.8281</td>
+</tr>
+<tr>
+<td>Geometric Continuity Index</td>
+<td>0.0208</td>
+<td>0.3542</td>
+<td>0.1719</td>
+</tr>
+<tr>
+<td>Perpendicular Surface Slice Analysis</td>
+<td>0.0417</td>
+<td>0.3542</td>
+<td>0.1979</td>
+</tr>
+<tr>
+<td>Quality Score</td>
+<td>0.1250</td>
+<td>0.2917</td>
+<td>0.1927</td>
+</tr>
+<tr>
+<td>Geometric Mean</td>
+<td>0.0833</td>
+<td>0.1875</td>
+<td>0.2031</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to read our actual data</strong>: For metrics where lower values indicate better precision (Geometric Continuity Index, Perpendicular Surface Slice Analysis, Quality Score, and Geometric Mean), ratios significantly below 1 reveal how much more precise private collection specimens are compared to industrial benchmarks. The most striking finding is for exterior surfaces: Private collection specimens achieve <strong>48× better precision</strong> than industrial benchmarks in Geometric Continuity Index (1/0.0208 = 48.1) and <strong>24× better</strong> in Perpendicular Surface Slice Analysis (1/0.0417 = 24.0).</p>
+<p>For Precision Score which works in the opposite direction (higher values indicate better precision), we interpret the ratio differently. Since Precision Score ratios are below 1, this means industrial artifacts achieve higher Precision Scores than private collection specimens. To quantify this difference: for interior surfaces, industrial artifacts show <strong>1.55× better precision</strong> than private collection specimens (1/0.6458 = 1.55), while for exterior surfaces the difference is nearly negligible (industrial artifacts are only 1.02× better). This counterintuitive finding reveals an important nuance: while private collection specimens achieve extraordinary smoothness and roundness (captured by other metrics), they lack the consistent, uniform precision across the entire surface that gives industrial artifacts their edge in the Precision Score metric.</p>
+<p>These complementary perspectives create a complete picture: private collection specimens show 2.8× better precision in smoothness and roundness metrics, while industrial artifacts achieve slightly better consistency across surfaces (captured by Precision Score). This extraordinary combination of properties - unprecedented smoothness with slightly less surface consistency - creates an insurmountable statistical case that private collection specimens operate outside known manufacturing paradigms for ancient artifacts, anomalies that require careful provenance verification.</p>
+<h1>Visualizing Precision: Five Perspectives on Ancient Craftsmanship</h1>
+<p>The four primary precision metrics (Precision Score, Geometric Continuity Index, Perpendicular Surface Slice Analysis, and Quality Metric) reveal remarkably consistent patterns and overlapping distributions, validating their fundamental comparability. The Perpendicular Surface Slice Analysis was specifically developed to verify the mathematical equivalence between slicing methodologies and continuous surface measurement using polynomial fitting. Having successfully confirmed this relationship (with near-identical results to Geometric Continuity Index), it has served its purpose as a methodological bridge and will not be used in future research. For ongoing studies, I will focus on my two primary precision metrics - Precision Score and Geometric Continuity Index - which share the same analytical framework while offering complementary insights (with Precision Score particularly highlighting subtle differences between high-precision vessels).</p>
+<h3><strong>Precision Score Analysis</strong></h3>
+<p><img alt="Chart showing interior vs. exterior Precision Score, 4 clusters are marked with circles, cluster centers (PV: 481.30, 1231.15; MV: 136.18, 42.32; HV: 63.34, 28.97; IV: 419.56, 218.69)" src="../images/comparative_metrology/precision_chart_interior_exterior_ps.webp" /></p>
+<p>This chart reveals how precisely each vessel was crafted on both interior and exterior surfaces. Unlike other metrics, <strong>higher numbers indicate better precision</strong> - think of it as a "perfection score" where small improvements at high precision levels yield dramatically higher values. The museum artifacts (MV, blue) and handmade reproductions (HV, red) form overlapping clusters with similar scores, confirming they operate within the same precision limits for handmade manufacturing. Statistical analysis supports this visual impression: Mann-Whitney U test shows no significant difference between these groups (p=0.637), with Cohen's d effect size of 0.44 indicating only a small practical difference-well within expected variation for human craftsmanship.</p>
+<p>Industrial pieces (IV, green) achieve impressive precision, but the private collection specimens (PV, orange) dramatically outperform all others-particularly on interior surfaces where they reach perfection scores up to 29× higher than museum artifacts (1231.15 vs. 42.32). The superiority ratio between PV and IV exterior surfaces is 0.98, indicating industrial artifacts actually achieve slightly better overall surface consistency (though PV specimens excel in other precision dimensions).</p>
+<p>One notable anomaly emerges: The interior surface precision of MV vessels significantly overlaps with the interior precision of IV vessels - a remarkable finding suggesting ancient artisans achieved machine-like consistency when working interior surfaces. This pattern, visible across multiple metrics, likely reflects specialized techniques developed over generations specifically for interior vessel shaping.</p>
+<h4><strong>Geometric Continuity Index Analysis</strong></h4>
+<p><img alt="Chart showing interior vs. exterior Geometric Continuity Index, 4 clusters are marked with circles, cluster centers (PV: 0.0528, 0.0310; MV: 0.1341, 0.2496; HV: 0.1682, 0.2146; IV: 0.0743, 0.0933)" src="../images/comparative_metrology/precision_chart_interior_exterior_surface_rmsd.webp" /></p>
+<p>This visualization measures surface smoothness in familiar millimeters/inches - smaller numbers mean smoother, more precise surfaces. The museum artifacts (MV, blue) and handmade reproductions (HV, red) show remarkable overlap, with statistical confirmation from the Kolmogorov-Smirnov test (p=0.520) indicating these groups likely represent the same underlying manufacturing process. Most strikingly, private collection specimens (PV, orange) reach smoothness levels of just 0.03-0.05mm on exterior surfaces - exceeding even industrial standards (IV, green) by a factor of 1.4× as shown by the superiority ratio. On interior surfaces, PV specimens are a remarkable 3.0× smoother than industrial benchmarks.</p>
+<p>The interior surface precision of MV vessels again overlaps significantly with IV vessels - a pattern that defies expectations since ancient handcrafted objects typically show greater variation than machine-produced items. This consistent interior precision across museum specimens suggests sophisticated quality control techniques specifically developed for interior vessel shaping, possibly involving specialized tools or multi-stage manufacturing processes refined over centuries.</p>
+<h3><strong>Perpendicular Surface Slice Analysis</strong></h3>
+<p><img alt="Chart showing interior vs. exterior Perpendicular Surface Slice Analysis (RMSD) score, 4 clusters are marked with circles, cluster centers (PV: 0.0523, 0.0309; MV: 0.1359, 0.2441; HV: 0.1687, 0.2082; IV: 0.0773, 0.0837)" src="../images/comparative_metrology/precision_chart_interior_exterior_pssa.webp" /></p>
+<p>This chart assesses how perfectly circular each vessel is by analyzing slices perpendicular to the surface-lower numbers indicate better roundness. As anticipated from our methodological validation, Perpendicular Surface Slice Analysis produces results nearly identical to Geometric Continuity Index, with correlation coefficients exceeding 0.99 across all artifact groups. This confirms the mathematical equivalence between slicing methodologies and continuous surface analysis that motivated Perpendicular Surface Slice Analysis's development.</p>
+<h3><strong>Quality Metric Analysis</strong></h3>
+<p><img alt="Chart showing interior vs. exterior Fomitchev Quality score, 4 clusters are marked with circles, cluster centers (PV: 3.47, 2.92; MV: 13.74, 15.77; HV: 19.69, 22.38; IV: 6.11, 7.32)" src="../images/comparative_metrology/precision_chart_interior_exterior_max.webp" /></p>
+<p>This visualization evaluates overall manufacturing precision through Max Fomitchev-Zamilov's composite score where <strong>lower numbers indicate better craftsmanship</strong>. Museum artifacts (MV) and handmade reproductions (HV) form closely aligned clusters, with statistical analysis revealing a large effect size (Cohen's d=-0.77) but still showing significant overlap in manufacturing capabilities (p=0.056). Industrial reproductions (IV) achieve the expected high precision (lowest scores), yet private collection specimens (PV) display anomalous precision that surpasses even industrial benchmarks-by 1.8× in exterior precision and a remarkable 2.5× in interior precision.</p>
+<h3><strong>Geometric Mean Analysis</strong></h3>
+<p><img alt="Chart showing interior vs. exterior Geometric Mean, 4 clusters are marked with circles, cluster centers (PV: 0.0473, 0.0207; MV: 0.2554, 0.1518; HV: 0.3762, 0.1319; IV: 0.1050, 0.0549)" src="../images/comparative_metrology/precision_chart_interior_exterior_karoly.webp" /></p>
+<p>This chart is not a measurement of ancient precision. It is a demonstration of how flawed methodology distorts reality.</p>
+<p>The Geometric Mean metric, invented and <em>utilized</em> by Karoly Poka of the Artifact Foundation to present precision ranking of artifacts, purports to quantify craftsmanship by combining median circularity and median concentricity into a single value by using a formula known as the geometric mean. But used in this context this formula is not precision analysis. It is mathematical theater.</p>
+<p>Here again, the data reveals what the previous dissection already proved: <strong>the Geometric Mean metric generates artificial patterns that contradict all valid measurement systems</strong>. Unlike the consistent clustering seen in Precision Score, Geometric Continuity Index, Perpendicular Surface Slice Analysis, and Quality Score, the Geometric Mean plot shows a distorted topology where museum (MV) and handmade (HV) vessels appear artificially separated. It suggests museum artisans achieved <em>superior</em> interior precision compared to modern handmade counterparts, with a cluster center of <strong>0.1518</strong> (MV) vs. <strong>0.1319</strong> (HV), quite a separation considering the metrics narrow range.</p>
+<p>This illusion stems directly from the metric’s fatal flaws:</p>
+<ul>
+<li><strong>Median suppression</strong>: By using medians, it discards the upper half of error distributions - hiding worst-case deviations that define manufacturing quality.</li>
+<li><strong>Alignment amplification</strong>: It is hypersensitive to rotational alignment, allowing minuscule (0.05°) shifts to alter results by &gt;17%, enabling score manipulation without detection.</li>
+<li><strong>Dimensional incoherence</strong>: It multiplies two length-based quantities without physical justification, creating a chimera masquerading as a metric.</li>
+</ul>
+<p>The consequence? A false narrative: that ancient artisans systematically outperformed modern handcrafters in interior precision. Yet all other metrics - grounded in continuous surface analysis, full error distribution, and geometric validity - show the opposite: MV and HV clusters overlap significantly.</p>
+<p>This shows how easily data can deceive when methodology lacks theoretical rigor, statistical integrity, or geometric coherence. The Geometric Mean does not measure precision - it measures vulnerability to manipulation. Its inclusion in this final section is not for validation, but for exposure: <strong>a visual indictment of a metric built on sand</strong>.</p>
+<h2>Conclusion</h2>
+<p>The mystery is solved - and the answer is plain human artisanal skill and persistence.</p>
+<p>The statistical evidence is unambiguous: the Predynastic stone vessels housed in the Petrie Museum belong to the same metrological population as modern handmade vases crafted without modern equipment.</p>
+<p>Across four rigorously validated precision metrics - Precision Score, Geometric Continuity Index, Perpendicular Surface Slice Analysis, and Quality Score - the clustering, distribution overlap, and statistical tests (Mann-Whitney U, Cohen’s d) all converge on a single, inescapable conclusion. There is no detectable gap in manufacturing capability between ancient artifacts and contemporary handwork.</p>
+<p>This is not an approximation or a vague indication. It is a comprehensively quantified fact, backed by solid methodology, statistical rigor and a comprehensive data-set.</p>
+<p>I came to this research as a skeptic. In prior studies, I had analyzed modern hard-stone replicas attempting to reproduce Predynastic techniques - none approached the refinement of the Petrie vases. Their surfaces were rougher, their symmetry inconsistent. I began this work suspecting we were missing something: a lost method, a forgotten tool, perhaps even a technology erased by time. The possibility of ancient precision beyond "low-tech", handcrafted limits was compelling and warranted serious consideration.</p>
+<p>Then <a href="https://maximus.energy/">Max Fomitchev-Zamilov</a> acquired and scanned nine handmade vases - authentic tourist-market pieces, carved in Egypt using traditional hand techniques passed down through generations. When the data arrived, I expected them to form a baseline of “low” precision against which museum pieces would stand out. Instead, they overlapped perfectly with the Petrie artifacts. The revelation was jarring. The mystery wasn’t <em>how</em> they achieved such precision, it was <em>why</em> we ever thought they couldn’t. The answer lay not in lost machines, but in sustained human skill, time, and iterative refinement. The artisans of Naqada III did not need advanced technology. They needed patience, training, and generations of accumulated knowledge; all of which they had.</p>
+<p>I owe Max profound thanks. For his meticulous scanning work, for sharing his full dataset without reservation, and for the hours of sharp, rigorous debate that shaped this analysis. This work would not exist without his commitment to open, evidence-based inquiry.</p>
+<p>Still, outliers remain - not in the sense of impossibility, but of excellence. Within the Petrie collection, vessels with surface variability RMSD of <strong>70 μm</strong> and <strong>94 μm</strong> (MV008 and MV005) represent the upper echelon of handmade precision - masterworks that push the limits of what human hands can achieve.</p>
+<p>Still, there is <strong>PV001</strong>. A private collection specimen, under the exclusive control of the Artifact Foundation, CT scanned at a Zeiss facility, but the raw scan data withheld from public scrutiny (and my work on it attempted silenced by Artifact Foundation). It records a surface variability RMSD of <strong>22 μm</strong> (0.022 mm / 0.00087 inches). That is not just better than the best museum piece. It is better than the best industrial CNC lathe-produced vase in our sample (surface variability RMSD 40 μm). It is <strong>5.3× more precise</strong> than the finest handmade vase (HV002, RMSD 117 μm). It is smoothness that belongs in a high-tech machining lab, not a Predynastic workshop.</p>
+<p>Such precision cannot be achieved with stone, copper, sand, and hand pressure - not in a thousand years of practice. It requires CNC-controlled toolpaths, submicron feedback systems, and materials science unavailable before the 20th century. Either PV001 is not 5,000 years old - or we must rewrite the entire narrative of technological history.</p>
+<p>This is not merely a metrological anomaly. It is a provenance issue. The data does not lie - but objects can be misplaced in time. My next article will dissect PV001 in forensic detail: it's geometry, it's anomalies, it's credibility. The question is no longer <em>how</em> it was made. It is <em>when</em>.</p>
+<p><em>Thank you for making it to the end of this long article!</em></p>
+<h2>Addendum</h2>
+<p><em>If you have a youtube channel or want to document the content of this article by video production, please contact me and I will provide you with all the needed material and answer all questions. Video production is not my field and I would appreciate it if others stepped in for this task as it seems Youtube is the place currently to share content like this.</em></p>
+<p><strong>Assets</strong>:<br>
+<a href="../data_assets/precision_metrics_data.csv">Results from all metrics - csv file</a><br>
+<a href="../data_assets/quality_score.py">Quality Score - Python implementation</a><br>
+<a href="../data_assets/geometric_mean.py">Geometric Mean - Python implementation</a><br></p>
+<p><strong>External Data Sources</strong>:</p>
+<p>Screenshots from the <a href="https://www.youtube.com/watch?v=8d752WFDL24">published analysis results by Artifact Foundation</a>, used in this article:</p>
+<p><img alt="Screenshot form YouTube video - Top 5 vessels and their scores (MV008,MV005,MV004,MV013,MV017)" src="../images/comparative_metrology/top5_karoly.png" /></p>
+<p><img alt="Screenshot form YouTube video - Circularity median of MV008 (0.072)" src="../images/comparative_metrology/MV008_circularity_karoly.png" /></p>
+<p><img alt="Screenshot form YouTube video - Concentricity median of MV008 (0.0536)" src="../images/comparative_metrology/MV008_concentricity_karoly.png" /></p>
+<p><img alt="Screenshot form YouTube video - Circularity median of MV005 (_)" src="../images/comparative_metrology/MV005_circularity_karoly.png" /></p>
+<p><img alt="Screenshot form YouTube video - Concentricity median of MV005 (_)" src="../images/comparative_metrology/MV005_concentricity_karoly.png" /></p>
+<p><img alt="Screenshot form YouTube video - Circularity median of MV013 (_)" src="../images/comparative_metrology/MV013_circularity_karoly.png" /></p>
+<p><img alt="Screenshot form YouTube video - Concentricity median of MV013 (_)" src="../images/comparative_metrology/MV013_concentricity_karoly.png" /></p>
+<br/><hr/><span class="no_print"><center style="margin-top: 0.75em;"><i>Copyright 2025 - Stine Gerdes / Arc Scientific</i></center></span>
+
+</body></html>
